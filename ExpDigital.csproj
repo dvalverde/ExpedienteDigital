@@ -1,0 +1,1276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85264830-7206-46C2-8EA4-43BCEF45D203}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExpDigital</RootNamespace>
+    <AssemblyName>ExpDigital</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44329</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActividadFortalecimientoController.cs" />
+    <Compile Include="Controllers\AgregarUsuarioController.cs" />
+    <Compile Include="Controllers\ArticuloController.cs" />
+    <Compile Include="Controllers\BuscarAtestadosController.cs" />
+    <Compile Include="Controllers\CapacitacionInternaController.cs" />
+    <Compile Include="Controllers\CapacitacionProfesionalController.cs" />
+    <Compile Include="Controllers\CitaDeAtestadoController.cs" />
+    <Compile Include="Controllers\ColaboracionEventoController.cs" />
+    <Compile Include="Controllers\ConocimientoSoftwareController.cs" />
+    <Compile Include="Controllers\CursoContinuoController.cs" />
+    <Compile Include="Controllers\CursoLibreController.cs" />
+    <Compile Include="Controllers\CursoNoRemuneradoController.cs" />
+    <Compile Include="Controllers\DesarrolloSoftwareController.cs" />
+    <Compile Include="Controllers\DesignacionController.cs" />
+    <Compile Include="Controllers\DireccionRangoSuperiorController.cs" />
+    <Compile Include="Controllers\DisenoIndustrialController.cs" />
+    <Compile Include="Controllers\GradoAcademicoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IdiomaController.cs" />
+    <Compile Include="Controllers\JuradoController.cs" />
+    <Compile Include="Controllers\LibroController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MembresiaConsejoController.cs" />
+    <Compile Include="Controllers\MembresiaOrganismoController.cs" />
+    <Compile Include="Controllers\MiembroOrganoController.cs" />
+    <Compile Include="Controllers\ModeloIndustrialController.cs" />
+    <Compile Include="Controllers\ModeloUtilidadController.cs" />
+    <Compile Include="Controllers\ObraAdministrativaDesarrolloController.cs" />
+    <Compile Include="Controllers\ObraArtisticaController.cs" />
+    <Compile Include="Controllers\ObraDidacticaController.cs" />
+    <Compile Include="Controllers\ObtencionVegetalController.cs" />
+    <Compile Include="Controllers\OrganizacionEventoController.cs" />
+    <Compile Include="Controllers\OtraObraProfesionalController.cs" />
+    <Compile Include="Controllers\PaiController.cs" />
+    <Compile Include="Controllers\ParticipacionComisionController.cs" />
+    <Compile Include="Controllers\ParticipacionCongresoController.cs" />
+    <Compile Include="Controllers\ParticipacionDeportivaController.cs" />
+    <Compile Include="Controllers\ParticipacionDestacadaController.cs" />
+    <Compile Include="Controllers\PatenteController.cs" />
+    <Compile Include="Controllers\PersonaController.cs" />
+    <Compile Include="Controllers\PersonaXCitaController.cs" />
+    <Compile Include="Controllers\PersonaXConcimientoSoftware.cs" />
+    <Compile Include="Controllers\PersonaXDesarrolloSoftwareController.cs" />
+    <Compile Include="Controllers\PersonaXObraAdministrativaDesarrolloController.cs" />
+    <Compile Include="Controllers\PersonaXObraDidacticaController.cs" />
+    <Compile Include="Controllers\PremioNacionalController.cs" />
+    <Compile Include="Controllers\ProyectoGraduacionGalardonadoController.cs" />
+    <Compile Include="Controllers\ProyectoInvestigacionsController.cs" />
+    <Compile Include="Controllers\PublicacionController.cs" />
+    <Compile Include="Controllers\ResponsableUnidadController.cs" />
+    <Compile Include="Controllers\SecretoController.cs" />
+    <Compile Include="Controllers\SistemaCIController.cs" />
+    <Compile Include="Controllers\TipoObraAdmiController.cs" />
+    <Compile Include="Controllers\TrabajoNoRemuneradoController.cs" />
+    <Compile Include="Filters\Encriptar.cs" />
+    <Compile Include="Filters\Verificar.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ActividadFortalecimiento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Articulo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Autor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXActividadFortalecimiento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXArticulo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXCapitulo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXColaboracionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXCursoCentroCapacitacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXDesarrolloSoftware.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXObraAdministrativaDesarrollo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXObraArtistica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXObraDidactica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXOrganizacionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXOtraObraProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXParticipacionDeportiva.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXParticipacionDestacada.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXPatente.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXPonenciaCongreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXProyectoGraduacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXProyectoInvestigacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AutorXPublicacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CapacitacionInterna.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CapacitacionProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Capitulo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CitaDeAtestado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ColaboracionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ComisionInstitucional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ConocimientoSoftware.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CursoCentroCapacitacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CursoContinuo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CursoLibre.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CursoNoRemunerado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DesarrolloSoftware.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Designacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DireccionRangoSuperior.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DisenoIndustrial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoActividadFortalecimiento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoArticulo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoCapacitacionInterna.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoCapacitacionProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoColaboracionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoComisionInstitucional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoConocimientoSoftware.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoCursoCentroCapacitacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoCursoContinuo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoCursoLibre.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoCursoNoRemunerado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoDesarrolloSoftware.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoDesignacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoDireccionRangoSuperior.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoDisenoIndustrial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoGradoAcademico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoIdioma.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoJurado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoLibro.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoMembresiaConsejo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoMembresiaOrganismo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoMiembroOrgano.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoModeloIndustrial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoModeloUtilidad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoObraAdministrativa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoObraArtistica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoObraDidactica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoObtencionVegetal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoOrganizacionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoOtraObraProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoParticipacionAIR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoParticipacionComision.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoParticipacionCongreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoParticipacionDeportiva.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoParticipacionDestacada.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoPatente.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoPonenciaCongreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoPremioNacional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoProyectoGraduacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoProyectoInvestigacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoPublicacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoResponsableUnidad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoSecreto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoSistemaCI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DocumentoTrabajoNoRemunerado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GradoAcademico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Idioma.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Jurado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Libro.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MembresiaConsejo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MembresiaOrganismo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MiembroOrgano.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloIndustrial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModeloUtilidad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ObraAdministrativaDesarrollo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ObraArtistica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ObraDidactica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ObtencionVegetal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrganizacionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtraObraProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pai.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParticipacionAIR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParticipacionComision.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParticipacionCongreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParticipacionDeportiva.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ParticipacionDestacada.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Patente.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Persona.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXActividadFortalecimiento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXArticulo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCapacitacionInterna.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCapacitacionProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCapitulo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCita.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXColaboracionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXConocimientoSoftware.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCursoCentroCapacitacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCursoContinuo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCursoLibre.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXCursoNoRemunerado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXDesarrolloSoftware.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXDesignacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXDireccionRangoSuperior.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXDisenoIndustrial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXGradoAcademico.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXIdioma.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXJurado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXMembresiaConsejo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXMembresiaOrganismo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXMiembroOrgano.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXModeloIndustrial.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXModeloUtilidad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXObraAdministrativaDesarrollo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXObraArtistica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXObraDidactica.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXObtencionVegetal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXOrganizacionEvento.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXOtraObraProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXParticipacionAIR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXParticipacionComision.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXParticipacionCongreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXParticipacionDeportiva.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXParticipacionDestacada.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXPatente.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXPonenciaCongreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXPremioNacional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXProyectoGraduacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXProyectoInvestigacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXPublicacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXResponsableUnidad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXSecreto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXSistemaCI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PersonaXTrabajoNoRemunerado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PonenciaCongreso.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PremioNacional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProyectoGraduacionGalardonado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProyectoInvestigacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Publicacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResponsableUnidad.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Secreto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SistemaCI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoObraAdmi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoObraProfesional.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TrabajoNoRemunerado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\JsonLista.cs" />
+    <Compile Include="ViewModels\QueryResult.cs" />
+    <Compile Include="ViewModels\ObraArteAutor.cs" />
+    <Compile Include="ViewModels\OtraObraAutor.cs" />
+    <Compile Include="ViewModels\DesarrolloSoftwareAutor.cs" />
+    <Compile Include="ViewModels\LibroCapituloAutor.cs" />
+    <Compile Include="ViewModels\ArticuloAutor.cs" />
+    <Compile Include="ViewModels\ObraAdminAutor.cs" />
+    <Compile Include="ViewModels\ObraDidacticaAutor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\OtraObra.js" />
+    <Content Include="Content\Articulo.js" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\Navbar.js" />
+    <Content Include="Content\nav-side.css" />
+    <Content Include="Content\Libro.js" />
+    <Content Include="Content\site.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\campus1.png" />
+    <Content Include="Images\estanteria.jpg" />
+    <Content Include="Images\logo-tec.png" />
+    <Content Include="Images\r1.jpg" />
+    <Content Include="Images\TEC-3.jpg" />
+    <Content Include="Images\user.png" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="lib\jquery\dist\jquery.js" />
+    <Content Include="lib\jquery\dist\jquery.min.js" />
+    <Content Include="lib\jquery\LICENSE.txt" />
+    <Content Include="lib\tableExport.jquery.plugin-master\.gitignore" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\es6-promise\es6-promise.auto.min.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\FileSaver\FileSaver.min.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\html2canvas\html2canvas.min.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\js-xlsx\xlsx.core.min.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\jsPDF-AutoTable\jspdf.plugin.autotable.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\jsPDF-AutoTable\LICENSE.txt" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\jsPDF\jspdf.min.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\jsPDF\MIT-LICENSE.txt" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\gbsn00lp_ARPHICPL.txt" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\gbsn00lp_fonts.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\mirza_fonts.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\pdfmake.min.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\vfs_fonts.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\ZCOOLXiaoWei_fonts.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\ZCOOLXiaoWei_OFL.txt" />
+    <Content Include="lib\tableExport.jquery.plugin-master\tableExport.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\tableExport.min.js" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\arabicExcel.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\arabicPdfmake.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\bootstrap.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\bootstrap2.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\bootstrap3.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\bootstrap4.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\chinesePdfmake.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\cssExcel.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\cssPdf.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\deferredExample.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\csv.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\json.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\pdf.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\png.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\sql.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\txt.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\word.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\xls.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\xml.png" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\index.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\Issue210.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\Issue279.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\Issue288.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\Issue289.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\Issue297.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\Issue302.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\massExcel.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\msoFormats.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\multipleExcel.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\pdfmake.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\performance.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\selectedRows.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\sidebyside.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\singleExcel.html" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\xlsx.html" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="lib\bootstrap\LICENSE" />
+    <Content Include="lib\jquery-validation\LICENSE.md" />
+    <Content Include="lib\jquery\dist\jquery.min.map" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="lib\tableExport.jquery.plugin-master\bower.json" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\es6-promise\LICENSE" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\FileSaver\LICENSE.md" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\html2canvas\LICENSE" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\js-xlsx\LICENSE" />
+    <Content Include="lib\tableExport.jquery.plugin-master\libs\pdfmake\LICENSE" />
+    <Content Include="lib\tableExport.jquery.plugin-master\LICENSE" />
+    <Content Include="lib\tableExport.jquery.plugin-master\package.json" />
+    <Content Include="lib\tableExport.jquery.plugin-master\README.md" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\bootstrap3.json" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\icons\Thumbs.db" />
+    <Content Include="lib\tableExport.jquery.plugin-master\test\tableExport.json" />
+    <Content Include="lib\tableExport.jquery.plugin-master\tools\minify2.py" />
+    <Content Include="lib\tableExport.jquery.plugin-master\tools\minify3.py" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Articulo\CreateArticulo.cshtml" />
+    <Content Include="Views\ObraAdministrativaDesarrollo\CreateObraAdmin.cshtml" />
+    <Content Include="Views\ObraArtistica\CreateObraArtistica.cshtml" />
+    <Content Include="Views\ObraArtistica\Delete.cshtml" />
+    <Content Include="Views\ObraArtistica\Details.cshtml" />
+    <Content Include="Views\ObraArtistica\Edit.cshtml" />
+    <Content Include="Views\ObraArtistica\Index.cshtml" />
+    <Content Include="Views\OtraObraProfesional\CreateObraProfesional.cshtml" />
+    <Content Include="Views\OtraObraProfesional\Delete.cshtml" />
+    <Content Include="Views\OtraObraProfesional\Details.cshtml" />
+    <Content Include="Views\OtraObraProfesional\Edit.cshtml" />
+    <Content Include="Views\OtraObraProfesional\Index.cshtml" />
+    <Content Include="Views\Libro\CreateLibro.cshtml" />
+    <Content Include="Views\Libro\Delete.cshtml" />
+    <Content Include="Views\Libro\Details.cshtml" />
+    <Content Include="Views\Libro\Edit.cshtml" />
+    <Content Include="Views\Libro\Index.cshtml" />
+    <Content Include="Views\DesarrolloSoftware\CreateDesarrolloSoftware.cshtml" />
+    <Content Include="Views\Patente\Create.cshtml" />
+    <Content Include="Views\Patente\Delete.cshtml" />
+    <Content Include="Views\Patente\Details.cshtml" />
+    <Content Include="Views\Patente\Edit.cshtml" />
+    <Content Include="Views\Patente\Index.cshtml" />
+    <Content Include="Views\Patente\CreatePatente.cshtml" />
+    <Content Include="Views\CursoLibre\Create.cshtml" />
+    <Content Include="Views\CursoLibre\Delete.cshtml" />
+    <Content Include="Views\CursoLibre\Details.cshtml" />
+    <Content Include="Views\CursoLibre\Edit.cshtml" />
+    <Content Include="Views\CursoLibre\Index.cshtml" />
+    <Content Include="Views\CursoLibre\CreateCursoLibre.cshtml" />
+    <Content Include="Views\CursoNoRemunerado\Create.cshtml" />
+    <Content Include="Views\CursoNoRemunerado\Delete.cshtml" />
+    <Content Include="Views\CursoNoRemunerado\Details.cshtml" />
+    <Content Include="Views\CursoNoRemunerado\Edit.cshtml" />
+    <Content Include="Views\CursoNoRemunerado\Index.cshtml" />
+    <Content Include="Views\CursoNoRemunerado\CreateCursoNoRemunerado.cshtml" />
+    <Content Include="Views\MembresiaConsejo\Create.cshtml" />
+    <Content Include="Views\MembresiaConsejo\Delete.cshtml" />
+    <Content Include="Views\MembresiaConsejo\Details.cshtml" />
+    <Content Include="Views\MembresiaConsejo\Edit.cshtml" />
+    <Content Include="Views\MembresiaConsejo\Index.cshtml" />
+    <Content Include="Views\MembresiaConsejo\CreateMembresiaConsejo.cshtml" />
+    <Content Include="Views\MembresiaOrganismo\Create.cshtml" />
+    <Content Include="Views\MembresiaOrganismo\Delete.cshtml" />
+    <Content Include="Views\MembresiaOrganismo\Details.cshtml" />
+    <Content Include="Views\MembresiaOrganismo\Edit.cshtml" />
+    <Content Include="Views\MembresiaOrganismo\Index.cshtml" />
+    <Content Include="Views\MembresiaOrganismo\CreateMembresiaOrganismo.cshtml" />
+    <Content Include="Views\ColaboracionEvento\Create.cshtml" />
+    <Content Include="Views\ColaboracionEvento\Delete.cshtml" />
+    <Content Include="Views\ColaboracionEvento\Details.cshtml" />
+    <Content Include="Views\ColaboracionEvento\Edit.cshtml" />
+    <Content Include="Views\ColaboracionEvento\Index.cshtml" />
+    <Content Include="Views\ColaboracionEvento\CreateColaboracionEvento.cshtml" />
+    <Content Include="Views\Jurado\Create.cshtml" />
+    <Content Include="Views\Jurado\Delete.cshtml" />
+    <Content Include="Views\Jurado\Details.cshtml" />
+    <Content Include="Views\Jurado\Edit.cshtml" />
+    <Content Include="Views\Jurado\Index.cshtml" />
+    <Content Include="Views\Jurado\CreateJurado.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\ParticipacionDeportiva\Create.cshtml" />
+    <Content Include="Views\ParticipacionDeportiva\Delete.cshtml" />
+    <Content Include="Views\ParticipacionDeportiva\Details.cshtml" />
+    <Content Include="Views\ParticipacionDeportiva\Edit.cshtml" />
+    <Content Include="Views\ParticipacionDeportiva\Index.cshtml" />
+    <Content Include="Views\ParticipacionDeportiva\CreateParticipacion.cshtml" />
+    <Content Include="Views\GradoAcademico\Create.cshtml" />
+    <Content Include="Views\GradoAcademico\Delete.cshtml" />
+    <Content Include="Views\GradoAcademico\Details.cshtml" />
+    <Content Include="Views\GradoAcademico\Edit.cshtml" />
+    <Content Include="Views\GradoAcademico\Index.cshtml" />
+    <Content Include="Views\GradoAcademico\CreateGrado.cshtml" />
+    <Content Include="Views\DireccionRangoSuperior\Create.cshtml" />
+    <Content Include="Views\DireccionRangoSuperior\Delete.cshtml" />
+    <Content Include="Views\DireccionRangoSuperior\Details.cshtml" />
+    <Content Include="Views\DireccionRangoSuperior\Edit.cshtml" />
+    <Content Include="Views\DireccionRangoSuperior\Index.cshtml" />
+    <Content Include="Views\DireccionRangoSuperior\CreateRango.cshtml" />
+    <Content Include="Views\CapacitacionInterna\Create.cshtml" />
+    <Content Include="Views\CapacitacionInterna\Delete.cshtml" />
+    <Content Include="Views\CapacitacionInterna\Details.cshtml" />
+    <Content Include="Views\CapacitacionInterna\Edit.cshtml" />
+    <Content Include="Views\CapacitacionInterna\Index.cshtml" />
+    <Content Include="Views\CapacitacionInterna\CreateCapacitacion.cshtml" />
+    <Content Include="Views\ModeloIndustrial\Create.cshtml" />
+    <Content Include="Views\ModeloIndustrial\Delete.cshtml" />
+    <Content Include="Views\ModeloIndustrial\Details.cshtml" />
+    <Content Include="Views\ModeloIndustrial\Edit.cshtml" />
+    <Content Include="Views\ModeloIndustrial\Index.cshtml" />
+    <Content Include="Views\ModeloIndustrial\CreateModelo.cshtml" />
+    <Content Include="Views\ParticipacionComision\Create.cshtml" />
+    <Content Include="Views\ParticipacionComision\Delete.cshtml" />
+    <Content Include="Views\ParticipacionComision\Details.cshtml" />
+    <Content Include="Views\ParticipacionComision\Edit.cshtml" />
+    <Content Include="Views\ParticipacionComision\Index.cshtml" />
+    <Content Include="Views\ParticipacionComision\CreateParticipacion.cshtml" />
+    <Content Include="Views\ActividadFortalecimiento\Create.cshtml" />
+    <Content Include="Views\ActividadFortalecimiento\Delete.cshtml" />
+    <Content Include="Views\ActividadFortalecimiento\Details.cshtml" />
+    <Content Include="Views\ActividadFortalecimiento\Edit.cshtml" />
+    <Content Include="Views\ActividadFortalecimiento\Index.cshtml" />
+    <Content Include="Views\ActividadFortalecimiento\CreateActividadFortalecimiento.cshtml" />
+    <Content Include="Views\ParticipacionDestacada\CreateParticipacionDestacada.cshtml" />
+    <Content Include="Views\ParticipacionDestacada\Delete.cshtml" />
+    <Content Include="Views\ParticipacionDestacada\Details.cshtml" />
+    <Content Include="Views\ParticipacionDestacada\Edit.cshtml" />
+    <Content Include="Views\ParticipacionDestacada\Index.cshtml" />
+    <Content Include="Views\ModeloUtilidad\CreateModeloUtilidad.cshtml" />
+    <Content Include="Views\ModeloUtilidad\Delete.cshtml" />
+    <Content Include="Views\ModeloUtilidad\Details.cshtml" />
+    <Content Include="Views\ModeloUtilidad\Edit.cshtml" />
+    <Content Include="Views\ModeloUtilidad\Index.cshtml" />
+    <Content Include="Views\ConocimientoSoftware\CreateConocimientoSoftware.cshtml" />
+    <Content Include="Views\ConocimientoSoftware\Delete.cshtml" />
+    <Content Include="Views\ConocimientoSoftware\Details.cshtml" />
+    <Content Include="Views\ConocimientoSoftware\Edit.cshtml" />
+    <Content Include="Views\ConocimientoSoftware\Index.cshtml" />
+    <Content Include="Views\ParticipacionCongreso\CreateParticipacionCongreso.cshtml" />
+    <Content Include="Views\ParticipacionCongreso\Delete.cshtml" />
+    <Content Include="Views\ParticipacionCongreso\Details.cshtml" />
+    <Content Include="Views\ParticipacionCongreso\Edit.cshtml" />
+    <Content Include="Views\ParticipacionCongreso\Index.cshtml" />
+    <Content Include="Views\OrganizacionEvento\CreateOrganizacionEvento.cshtml" />
+    <Content Include="Views\OrganizacionEvento\Delete.cshtml" />
+    <Content Include="Views\OrganizacionEvento\Details.cshtml" />
+    <Content Include="Views\OrganizacionEvento\Edit.cshtml" />
+    <Content Include="Views\OrganizacionEvento\Index.cshtml" />
+    <Content Include="Views\ObtencionVegetal\CreateObtencionVegetal.cshtml" />
+    <Content Include="Views\ObtencionVegetal\Delete.cshtml" />
+    <Content Include="Views\ObtencionVegetal\Details.cshtml" />
+    <Content Include="Views\ObtencionVegetal\Edit.cshtml" />
+    <Content Include="Views\ObtencionVegetal\Index.cshtml" />
+    <Content Include="Views\Idioma\CreateIdioma.cshtml" />
+    <Content Include="Views\Idioma\Delete.cshtml" />
+    <Content Include="Views\Idioma\Details.cshtml" />
+    <Content Include="Views\Idioma\Edit.cshtml" />
+    <Content Include="Views\Idioma\Index.cshtml" />
+    <Content Include="Views\Designacion\CreateDesignacion.cshtml" />
+    <Content Include="Views\Designacion\Delete.cshtml" />
+    <Content Include="Views\Designacion\Details.cshtml" />
+    <Content Include="Views\Designacion\Edit.cshtml" />
+    <Content Include="Views\Designacion\Index.cshtml" />
+    <Content Include="Views\CursoContinuo\CreateCursoContinuo.cshtml" />
+    <Content Include="Views\CursoContinuo\Delete.cshtml" />
+    <Content Include="Views\CursoContinuo\Details.cshtml" />
+    <Content Include="Views\CursoContinuo\Edit.cshtml" />
+    <Content Include="Views\CursoContinuo\Index.cshtml" />
+    <Content Include="Views\DisenoIndustrial\CreateDisenoIndustrial.cshtml" />
+    <Content Include="Views\DisenoIndustrial\Delete.cshtml" />
+    <Content Include="Views\DisenoIndustrial\Details.cshtml" />
+    <Content Include="Views\DisenoIndustrial\Edit.cshtml" />
+    <Content Include="Views\DisenoIndustrial\Index.cshtml" />
+    <Content Include="Views\CapacitacionProfesional\CreateCapacitacionProfesional.cshtml" />
+    <Content Include="Views\CapacitacionProfesional\Delete.cshtml" />
+    <Content Include="Views\CapacitacionProfesional\Details.cshtml" />
+    <Content Include="Views\CapacitacionProfesional\Edit.cshtml" />
+    <Content Include="Views\CapacitacionProfesional\Index.cshtml" />
+    <Content Include="Views\MiembroOrgano\CreateMiembroOrgano.cshtml" />
+    <Content Include="Views\MiembroOrgano\Delete.cshtml" />
+    <Content Include="Views\MiembroOrgano\Details.cshtml" />
+    <Content Include="Views\MiembroOrgano\Edit.cshtml" />
+    <Content Include="Views\MiembroOrgano\Index.cshtml" />
+    <Content Include="Views\AgregarUsuario\CreateAgregarUsuario.cshtml" />
+    <Content Include="Views\BuscarAtestados\BuscarAtestados.cshtml" />
+    <None Include="Views\Persona\CreatePersona.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Persona\Create1.cshtml" />
+    <Content Include="Views\Persona\Delete.cshtml" />
+    <Content Include="Views\Persona\Details.cshtml" />
+    <Content Include="Views\Persona\Edit.cshtml" />
+    <Content Include="Views\Persona\Index.cshtml" />
+    <Content Include="Views\Articulo\Delete.cshtml" />
+    <Content Include="Views\Articulo\Details.cshtml" />
+    <Content Include="Views\Articulo\Edit.cshtml" />
+    <Content Include="Views\Articulo\Index.cshtml" />
+    <Content Include="Views\CitaDeAtestado\Create.cshtml" />
+    <Content Include="Views\CitaDeAtestado\Delete.cshtml" />
+    <Content Include="Views\CitaDeAtestado\Details.cshtml" />
+    <Content Include="Views\CitaDeAtestado\Edit.cshtml" />
+    <Content Include="Views\CitaDeAtestado\Index.cshtml" />
+    <Content Include="Views\DesarrolloSoftware\Create.cshtml" />
+    <Content Include="Views\DesarrolloSoftware\Delete.cshtml" />
+    <Content Include="Views\DesarrolloSoftware\Details.cshtml" />
+    <Content Include="Views\DesarrolloSoftware\Edit.cshtml" />
+    <Content Include="Views\DesarrolloSoftware\Index.cshtml" />
+    <Content Include="Views\ObraAdministrativaDesarrollo\Create.cshtml" />
+    <Content Include="Views\ObraAdministrativaDesarrollo\Delete.cshtml" />
+    <Content Include="Views\ObraAdministrativaDesarrollo\Details.cshtml" />
+    <Content Include="Views\ObraAdministrativaDesarrollo\Edit.cshtml" />
+    <Content Include="Views\ObraAdministrativaDesarrollo\Index.cshtml" />
+    <Content Include="Views\ObraDidactica\CreateObraDidactica.cshtml" />
+    <Content Include="Views\ObraDidactica\Delete.cshtml" />
+    <Content Include="Views\ObraDidactica\Details.cshtml" />
+    <Content Include="Views\ObraDidactica\Edit.cshtml" />
+    <Content Include="Views\ObraDidactica\Index.cshtml" />
+    <Content Include="Views\Pai\Create.cshtml" />
+    <Content Include="Views\Pai\Delete.cshtml" />
+    <Content Include="Views\Pai\Details.cshtml" />
+    <Content Include="Views\Pai\Edit.cshtml" />
+    <Content Include="Views\Pai\Index.cshtml" />
+    <Content Include="Views\PersonaXCita\Create.cshtml" />
+    <Content Include="Views\PersonaXCita\Delete.cshtml" />
+    <Content Include="Views\PersonaXCita\Details.cshtml" />
+    <Content Include="Views\PersonaXCita\Edit.cshtml" />
+    <Content Include="Views\PersonaXCita\Index.cshtml" />
+    <Content Include="Views\PersonaXDesarrolloSoftware\Create.cshtml" />
+    <Content Include="Views\PersonaXDesarrolloSoftware\Delete.cshtml" />
+    <Content Include="Views\PersonaXDesarrolloSoftware\Details.cshtml" />
+    <Content Include="Views\PersonaXDesarrolloSoftware\Edit.cshtml" />
+    <Content Include="Views\PersonaXDesarrolloSoftware\Index.cshtml" />
+    <Content Include="Views\PersonaXObraDidactica\Create.cshtml" />
+    <Content Include="Views\PersonaXObraDidactica\Delete.cshtml" />
+    <Content Include="Views\PersonaXObraDidactica\Details.cshtml" />
+    <Content Include="Views\PersonaXObraDidactica\Edit.cshtml" />
+    <Content Include="Views\PersonaXObraDidactica\Index.cshtml" />
+    <Content Include="Views\ProyectoGraduacionGalardonado\Create.cshtml" />
+    <Content Include="Views\ProyectoGraduacionGalardonado\Delete.cshtml" />
+    <Content Include="Views\ProyectoGraduacionGalardonado\Details.cshtml" />
+    <Content Include="Views\ProyectoGraduacionGalardonado\Edit.cshtml" />
+    <Content Include="Views\ProyectoGraduacionGalardonado\Index.cshtml" />
+    <Content Include="Views\PersonaXObraAdministrativaDesarrollo\Create.cshtml" />
+    <Content Include="Views\PersonaXObraAdministrativaDesarrollo\Delete.cshtml" />
+    <Content Include="Views\PersonaXObraAdministrativaDesarrollo\Details.cshtml" />
+    <Content Include="Views\PersonaXObraAdministrativaDesarrollo\Edit.cshtml" />
+    <Content Include="Views\PersonaXObraAdministrativaDesarrollo\Index.cshtml" />
+    <Content Include="Views\TipoObraAdmi\Create.cshtml" />
+    <Content Include="Views\TipoObraAdmi\Delete.cshtml" />
+    <Content Include="Views\TipoObraAdmi\Details.cshtml" />
+    <Content Include="Views\TipoObraAdmi\Edit.cshtml" />
+    <Content Include="Views\TipoObraAdmi\Index.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared1\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Include="Views\ProyectoGraduacionGalardonado\CreateProyecto.cshtml" />
+    <Content Include="Views\TrabajoNoRemunerado\Create.cshtml" />
+    <Content Include="Views\TrabajoNoRemunerado\Delete.cshtml" />
+    <Content Include="Views\TrabajoNoRemunerado\Details.cshtml" />
+    <Content Include="Views\TrabajoNoRemunerado\Edit.cshtml" />
+    <Content Include="Views\TrabajoNoRemunerado\Index.cshtml" />
+    <Content Include="Views\TrabajoNoRemunerado\CreateTrabajoNoRemunerado.cshtml" />
+    <Content Include="Views\PremioNacional\Create.cshtml" />
+    <Content Include="Views\PremioNacional\Delete.cshtml" />
+    <Content Include="Views\PremioNacional\Details.cshtml" />
+    <Content Include="Views\PremioNacional\Edit.cshtml" />
+    <Content Include="Views\PremioNacional\Index.cshtml" />
+    <Content Include="Views\PremioNacional\CreatePremioNacional.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Secreto\CreateSecreto.cshtml" />
+    <Content Include="Views\Secreto\Delete.cshtml" />
+    <Content Include="Views\Secreto\Details.cshtml" />
+    <Content Include="Views\Secreto\Edit.cshtml" />
+    <Content Include="Views\Secreto\Index.cshtml" />
+    <Content Include="Views\ProyectoInvestigacions\CreateProyectoInvestigacion.cshtml" />
+    <Content Include="Views\ProyectoInvestigacions\Delete.cshtml" />
+    <Content Include="Views\ProyectoInvestigacions\Details.cshtml" />
+    <Content Include="Views\ProyectoInvestigacions\Edit.cshtml" />
+    <Content Include="Views\ProyectoInvestigacions\Index.cshtml" />
+    <Content Include="Views\Publicacion\CreatePublicacion.cshtml" />
+    <Content Include="Views\Publicacion\Delete.cshtml" />
+    <Content Include="Views\Publicacion\Details.cshtml" />
+    <Content Include="Views\Publicacion\Edit.cshtml" />
+    <Content Include="Views\Publicacion\Index.cshtml" />
+    <Content Include="Views\ResponsableUnidad\CreateResponsableUnidad.cshtml" />
+    <Content Include="Views\ResponsableUnidad\Delete.cshtml" />
+    <Content Include="Views\ResponsableUnidad\Details.cshtml" />
+    <Content Include="Views\ResponsableUnidad\Edit.cshtml" />
+    <Content Include="Views\ResponsableUnidad\Index.cshtml" />
+    <Content Include="Views\SistemaCI\CreateSistemaCI.cshtml" />
+    <Content Include="Views\SistemaCI\Delete.cshtml" />
+    <Content Include="Views\SistemaCI\Details.cshtml" />
+    <Content Include="Views\SistemaCI\Edit.cshtml" />
+    <Content Include="Views\SistemaCI\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\AgregarUsuarios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49692</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44329/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
