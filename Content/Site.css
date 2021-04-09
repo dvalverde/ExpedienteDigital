@@ -1,0 +1,249 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.sidebarColor {
+    background-color: #140e39;
+    color: #140e39;
+}
+
+
+/*aqui empieza lo que no tengo que mover de esta ubicacion*/
+.btn-primary {
+    background-color: #1B2576;
+}
+
+   
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    zoom: 98%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.logo-image {
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+    margin-top: -50px;
+}
+
+.start-image {
+    width: 935px;
+    height: 935px;
+    overflow: hidden;
+    margin-top: -50px;
+    margin-left: 100px;
+}
+
+.move-right {
+    margin-left: 100px;
+}
+
+.home-title {
+    margin-top: 60px;
+}
+
+.img-estanteria {
+    width: 100%;
+}
+
+.radio-labels{
+    margin-top: 5px;
+    margin-left: -8px;
+}
+
+
+/*SIDEBAR AND NAVBAR*/
+
+.sidebar-container {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fff;
+    color: #140e39;
+}
+
+.content-container {
+    padding-top: 20px;
+}
+
+.sidebar-logo {
+    padding: 10px 15px 10px 30px;
+    font-size: 20px;
+    background-color: #140e39;
+}
+
+.sidebar-navigation {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+
+    .sidebar-navigation ul li {
+        background-color: transparent;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        line-height: 20px;
+    }
+
+    .sidebar-navigation li a {
+        padding: 10px 15px 10px 30px;
+        display: block;
+        color: #140e39;
+    }
+
+    .sidebar-navigation ul li .fa {
+        margin-right: 10px;
+    }
+
+    .sidebar-navigation ul li a:active,
+    .sidebar-navigation ul li a:hover,
+    .sidebar-navigation ul li a:focus {
+        text-decoration: none;
+        outline: none;
+    }
+
+    .sidebar-navigation ul li::before {
+        background: rgb(201,201,201);
+        background: linear-gradient(90deg, rgba(201,201,201,1) 10%, rgba(201,201,201,1) 30%);
+        position: absolute;
+        content: '';
+        height: 100%;
+        left: 0;
+        top: 0;
+        -webkit-transition: width 0.2s ease-in;
+        transition: width 0.2s ease-in;
+        width: 3px;
+        z-index: -1;
+    }
+
+    .sidebar-navigation ul li:hover::before {
+        width: 100%;
+    }
+
+    .sidebar-navigation .header {
+        font-size: 12px;
+        text-transform: uppercase;
+        background-color: #140e66;
+        color: white;
+        padding: 10px 15px 10px 30px;
+    }
+
+        .sidebar-navigation .header::before {
+            background-color: transparent;
+        }
+
+.content-container {
+    padding-left: 220px;
+}
+
+.accordion-caret .accordion-toggle:hover {
+    text-decoration: none;
+}
+
+    .accordion-caret .accordion-toggle:hover span,
+    .accordion-caret .accordion-toggle:hover strong {
+        text-decoration: underline;
+    }
+
+.accordion-caret .accordion-toggle:before {
+    font-size: 25px;
+    vertical-align: -3px;
+}
+
+.accordion-caret .accordion-toggle:not(.collapsed):before {
+    content: "▾";
+    margin-right: 0px;
+}
+
+.accordion-caret .accordion-toggle.collapsed:before {
+    content: "▸";
+    margin-right: 0px;
+}
