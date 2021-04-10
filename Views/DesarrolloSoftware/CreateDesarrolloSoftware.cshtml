@@ -1,0 +1,151 @@
+﻿@model ExpDigital.ViewModels.DesarolloSoftwareAutor
+
+
+@{
+    ViewBag.Title = "CreateDesarrolloSoftware";
+}
+
+
+@using (Html.BeginForm("CreateDesarrolloSoftware", "DesarrolloSoftware", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            @if (ViewBag.softAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Desarrollo de Software Agregado!</strong> el atestado se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorSoft != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar el atestado. @ViewBag.errorArt
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-color: #eeeeee">
+                <h1>Desarrollo de software</h1>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form onsubmit="submitDesarrolloSoftware">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="inputEmail4">Nombre del software</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputState">Número de autores</label>
+                            @Html.DropDownListFor(m => m.numeroAutores, Enumerable.Range(1, 100).Select(i =>
+                            new SelectListItem { Text = i.ToString(), Value = i.ToString() }),
+                            new { @class = "form-control col-md-8", @required = "required", @id = "selectSoftware", @onclick = "selectSoftware" })
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <table class="table table-bordered table-hover" id="tab_logic_d" style="display:none">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">
+                                                #
+                                            </th>
+                                            <th class="text-center">
+                                                Nombre del autor
+                                            </th>
+                                            <th class="text-center">
+                                                Correo electrónico
+                                            </th>
+                                            <th class="text-center">
+                                                Distribución porcentual de autoría
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (int i = 0; i < 100; i++)
+                                        {
+                                            <tr id=@i>
+                                                <td>
+                                                    @i
+                                                </td>
+                                                <td>
+                                                    @Html.EditorFor(model => model.autores[i].nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                                </td>
+                                                <td>
+                                                    @*<input type="text" name='mailArticulo2' placeholder='Correo electrónico' class="form-control" />*@
+                                                    @Html.EditorFor(model => model.autores[i].correoElectronico, new { htmlAttributes = new { @class = "form-control" } })
+                                                </td>
+                                                <td>
+                                                    @*<input type="text" name='distArticulo0' placeholder='Distribución porcentual' class="form-control" />*@
+                                                    @Html.EditorFor(model => model.autorXDesarrolloSoftware[i].distribucionAutoria, new { htmlAttributes = new { @class = "form-control" } })
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="form-row">
+
+                        <p class="text-info">Cargar documento que expone los logros:</p>
+                        <div class="form-group mt-3 col-md-10">
+                            <input type="file" name="upload" required />
+                        </div>
+
+                        <p class="text-info">Certificación del Superior Jerárquico:</p>
+                        <div class="form-group mt-3 col-md-10">
+                            <input type="file" name="upload" required />
+                        </div>
+
+                        <p class="text-info">Carta de consentimiento de la distribución:</p>
+                        <div class="form-group mt-3 col-md-10">
+                            <input type="file" name="upload" required />
+                        </div>
+
+                        @*<div class="form-group col-md-4">
+                                <p class="text-info">Cargar documento que expone los logros:</p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <p class="text-info">Cargar Certificación del Superior Jerárquico:</p>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <p class="text-info">Cargar Carta de consentimiento de la distribución:</p>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <<input type="file" name="upload" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="file" name="upload" required />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="file" name="upload" required />
+                                </div>
+
+                            </div>*@
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <button type="submit" class="btn btn-primary" runat="server">Aceptar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+}

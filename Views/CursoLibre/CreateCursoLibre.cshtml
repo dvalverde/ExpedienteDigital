@@ -1,0 +1,72 @@
+﻿@model ExpDigital.Models.CursoLibre
+
+@{
+    ViewBag.Title = "CreateCursoLibre";
+}
+
+
+@using (Html.BeginForm("CreateCursoLibre", "CursoLibre", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            @if (ViewBag.libreAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Curso Libre Agregado!</strong> el curso libre se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorLibre != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar el curso libre. @ViewBag.errorLibre
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Cursos Libres</h1>
+                <br />
+                <br />
+                <p class="text-info">Complete la información correspondiente</p>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Nombre del Curso Libre</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <p class="text-info">Subir PDF:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" />
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+         
+                    <button type="submit" class="btn btn-primary" runat="server">Aceptar</button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+}
+

@@ -1,0 +1,81 @@
+﻿@model ExpDigital.Models.CursoNoRemunerado
+
+@{
+    ViewBag.Title = "CreateCursoNoRemunerado";
+}
+
+
+@using (Html.BeginForm("CreateCursoNoRemunerado", "CursoNoRemunerado", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            @if (ViewBag.obraAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Curso No Remunerado Agregado!</strong> El Curso No Remunerado se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorObra != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar el Curso No Remunerado.
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Cursos No Remunerados</h1>
+                <br />
+                <br />
+                <p class="text-info">Complete la información correspondiente</p>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="inputEmail4">Nombre del Curso No Remunerado</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Periodo Lectivo en el que se desarrollo la actividad</label>
+                            <div>
+                                @Html.EditorFor(model => model.periodoLectivo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.periodoLectivo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <p class="text-info">Cargar Evidencias:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" />
+                        @*<input type="file" id="file" name="file" value="ActionHandlerForForm" />*@
+                        @* @Html.TextBoxFor(model => model.file, new { type = "file" })
+                            <input type="submit" id="btnUpload" value="Upload" />*@
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    @*<button type="submit" class="btn btn-primary" onclick="aceptarAutoresCursoNoRemunerado()" >Aceptar</button>*@
+                    @*<button type="submit" class="btn btn-primary" onclick="aceptarAutoresCursoNoRemunerado()">Aceptar</button>*@
+                    <input type="submit" value="Aceptar" class="btn btn-primary" />
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+}

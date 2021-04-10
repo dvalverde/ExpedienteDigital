@@ -1,0 +1,71 @@
+﻿@model ExpDigital.Models.Designacion
+
+@{
+    ViewBag.Title = "CreateDesignacion";
+}
+
+
+@using (Html.BeginForm("CreateDesignacion", "Designacion", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+            @if (ViewBag.designacionAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Designación Para Realizar Labores Especiales Agregada!</strong> La Designación Para Realizar Labores Especiales se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorDesignacion != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar la Designación Para Realizar Labores Especiales.
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-color: #eeeeee">
+                <h1>Designación Para Realizar Labores Especiales</h1>
+                <br />
+                <br />
+                <p class="text-info">Complete la información correspondiente</p>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Labor Especial Realizada</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+
+                    <p class="text-info">Cargar evidencia:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" required />
+
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <input type="submit" value="Aceptar" class="btn btn-primary" />
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+}
+

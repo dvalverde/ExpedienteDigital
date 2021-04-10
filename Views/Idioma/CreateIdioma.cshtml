@@ -1,0 +1,71 @@
+﻿@model ExpDigital.Models.Idioma
+
+@{
+    ViewBag.Title = "CreateIdioma";
+}
+
+
+@using (Html.BeginForm("CreateIdioma", "Idioma", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+            @if (ViewBag.idiomaAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Idioma Agregado!</strong> El idioma se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorIdioma != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar el idioma.
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-color: #eeeeee">
+                <h1>Idiomas</h1>
+                <br />
+                <br />
+                <p class="text-info">Complete la información correspondiente</p>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Nombre del idioma</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+
+                    <p class="text-info">Cargar evidencia:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" required />
+
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <input type="submit" value="Aceptar" class="btn btn-primary" />
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+}
+
