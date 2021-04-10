@@ -1,0 +1,42 @@
+﻿@model ExpDigital.Models.PersonaXObraAdministrativaDesarrollo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonaXObraAdministrativaDesarrollo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.distribucionAutoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.distribucionAutoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ObraAdministrativaDesarrollo.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ObraAdministrativaDesarrollo.titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.cedula)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

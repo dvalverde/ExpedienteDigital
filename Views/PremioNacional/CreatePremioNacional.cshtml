@@ -1,0 +1,83 @@
+﻿@model ExpDigital.Models.PremioNacional
+
+@{
+    ViewBag.Title = "CreatePremioNacional";
+}
+
+
+@using (Html.BeginForm("CreatePremioNacional", "PremioNacional", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+            @if (ViewBag.prAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Premio Agregado!</strong> el premio nacional se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorpr != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar el premio nacional.
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Premios Nacionales e Internacionales</h1>
+                <br />
+                <br />
+                <p class="text-info">Complete la información correspondiente</p>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="inputEmail4">Nombre del Premio</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Año</label>
+                            <div>
+                                @Html.EditorFor(model => model.anno, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.anno, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <p class="text-info">Subir PDF:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" />
+                        @*<input type="file" id="file" name="file" value="ActionHandlerForForm" />*@
+                        @* @Html.TextBoxFor(model => model.file, new { type = "file" })
+                    <input type="submit" id="btnUpload" value="Upload" />*@
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                   @* <button type="submit" class="btn btn-outline-primary">Agregar otro Premio</button>*@
+                    @*<button type="submit" class="btn btn-primary" onclick="aceptarAutoresPremioNacional()" >Aceptar</button>*@
+                    @*<button type="submit" class="btn btn-primary" onclick="aceptarAutoresPremioNacional()">Aceptar</button>*@
+                    <input type="submit" value="Aceptar" class="btn btn-primary" />
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+}
+
+
