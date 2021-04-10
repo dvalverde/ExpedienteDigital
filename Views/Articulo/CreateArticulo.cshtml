@@ -1,0 +1,158 @@
+﻿
+
+@model ExpDigital.ViewModels.ArticuloAutor
+
+@{
+    ViewBag.Title = "CreateArticulo";
+}
+
+
+
+
+@using (Html.BeginForm("CreateArticulo", "Articulo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            @if (ViewBag.artAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Artículo Agregado!</strong> el artículo se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorArt != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar el artículo. @ViewBag.errorArt
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-color: #eeeeee">
+                <h1>Artículos</h1>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form onsubmit="submitArticulos">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Título del Artículo</label>
+                            <div>
+                                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.titulo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputEmail4">Año</label>
+                            <div>
+                                @Html.EditorFor(model => model.anno, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.anno, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputEmail4">Nombre de la Revista</label>
+                            <div>
+                                @Html.EditorFor(model => model.revista, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.revista, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputEmail4">País</label>
+                            <div>
+                                @Html.DropDownListFor(m => m.id_pais, (IEnumerable<SelectListItem>)ViewBag.Pais, new { @class = "form-control col-md-8" })
+                                @*@Html.DropDownList("id_pais", null, htmlAttributes: new { @class = "form-control" })*@
+                                @Html.ValidationMessageFor(model => model.id_pais, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Número de autores</label>
+                            @Html.DropDownListFor(m => m.numeroAutores, Enumerable.Range(1, 100).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }), new { @class = "form-control", @required = "required", @id = "selectArticulos", @onclick = "selectArticulos" })
+                        </div>
+
+                        <input type="text" name="campo" id="campo" runat="server" style="display:none" />
+
+
+                        <div class="container">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <table class="table table-bordered table-hover" id="tab_logic_articulo" style="display:none">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    #
+                                                </th>
+                                                <th class="text-center">
+                                                    Nombre del autor
+                                                </th>
+                                                <th class="text-center">
+                                                    Correo electrónico
+                                                </th>
+                                                <th class="text-center">
+                                                    Distribución porcentual de autoría
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < 100; i++)
+                                            {
+                                                <tr id=@i>
+                                                    <td>
+                                                        @i
+                                                    </td>
+                                                    <td>
+                                                        @*<input type="text" name='nombreArticulo2' placeholder='Nombre del Autor' class="form-control" />*@
+                                                        @Html.EditorFor(model => model.autores[i].nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                                    </td>
+                                                    <td>
+                                                        @*<input type="text" name='mailArticulo2' placeholder='Correo electrónico' class="form-control" />*@
+                                                        @Html.EditorFor(model => model.autores[i].correoElectronico, new { htmlAttributes = new { @class = "form-control" } })
+                                                    </td>
+                                                    <td>
+                                                        @*<input type="text" name='distArticulo0' placeholder='Distribución porcentual' class="form-control" />*@
+                                                        @Html.EditorFor(model => model.autorXArticulos[i].distribucionAutoria, new { htmlAttributes = new { @class = "form-control" } })
+                                                    </td>
+                                                </tr>
+
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <p class="text-info">Subir PDF:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" required />
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <p>El libro posee consejo editorial?</p>
+
+                    <div class="custom-control custom-radio custom-control-inline">
+                        @Html.RadioButtonFor(m => m.consejoEditorial, "Si", new { @class = "form-control col-md-3" })@Html.Label("Sí", new { @class = "radio-labels col-md-5" })
+                        @Html.RadioButtonFor(m => m.consejoEditorial, "No", new { @class = "form-control col-md-3" })@Html.Label("No", new { @class = "radio-labels col-md-6" })
+                    </div>
+                    <br />
+                    <br />
+
+                    <button type="submit" class="btn btn-primary" runat="server">Aceptar</button>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+}

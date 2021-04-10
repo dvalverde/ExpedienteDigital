@@ -1,0 +1,66 @@
+﻿@model ExpDigital.Models.Articulo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="move-right">Details</h2>
+
+<div class="move-right">
+    <h4>Articulo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroAutores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroAutores)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.revista)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.revista)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consejoEditorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consejoEditorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pai.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pai.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

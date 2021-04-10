@@ -1,0 +1,68 @@
+﻿@model ExpDigital.Models.CapacitacionProfesional
+
+@{
+    ViewBag.Title = "CreateCapacitacionProfesional";
+}
+
+
+@using (Html.BeginForm("CreateCapacitacionProfesional", "CapacitacionProfesional", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            @if (ViewBag.obraAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Capacitación Profesional Agregada!</strong> La Capacitación Profesional se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorObra != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar la Capacitación Profesional.
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Capacitación Profesional</h1>
+                <br />
+                <br />
+                <p class="text-info">Complete la información correspondiente</p>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Nombre del Diseño</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <p class="text-info">Cargar Evidencia:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" />
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <input type="submit" value="Aceptar" class="btn btn-primary" />
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+}

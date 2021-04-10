@@ -1,0 +1,404 @@
+﻿@model ExpDigital.ViewModels.JsonLista
+@{
+    ViewBag.Title = "BuscarAtestados";
+}
+
+@using (Html.BeginForm("BuscarAtestados", "BuscarAtestados", FormMethod.Get, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="content-container" style="margin-left: -100px; margin-right: -100px">
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" />
+
+    <script type="text/javascript" src="../lib/tableExport.jquery.plugin-master/libs/js-xlsx/xlsx.core.min.js"></script>
+    <script type="text/javascript" src="../lib/tableExport.jquery.plugin-master/libs/FileSaver/FileSaver.min.js"></script>
+    <script type="text/javascript" src="../lib/tableExport.jquery.plugin-master/tableExport.min.js"></script>
+
+
+    <style>
+        #toolbar {
+            margin: 0;
+        }
+    </style>
+
+    <style>
+        label input {
+            display: inline-block !important;
+            width: auto !important;
+        }
+    </style>
+
+    <div class="form-row">
+        <div class="form-group col-md-10">
+        </div>
+        <div class="form-group col-md-2">
+            <button type="button" class="btn btn-secondary" onclick="export_excel()" style="align=right">Exportar Excel</button>
+        </div>
+    </div>
+
+
+    <table id="table"
+           data-locale="es-ES"
+           data-search="true"
+           data-toolbar="#toolbar"
+           data-show-export="true"
+           data-sortable="true"
+           data-show-toggle="true"
+           data-detail-view="true"
+           data-show-fullscreen="true"
+           data-detail-formatter="detailFormatter">
+
+        <thead>
+            <tr>
+                <th data-field="persona" data-sortable="true">Persona</th>
+                <th data-field="name" data-sortable="true">Nombre del Atestado</th>
+                <th data-field="tipo" data-sortable="true">Tipo de Atestado</th>
+                <th data-field="filename" data-sortable="true">Nombre del Archivo</th>
+                <th data-field="autor" data-sortable="true">Autor</th>
+                <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents" data-footer-formatter="footerFormatter">Ver Doc</th>
+            </tr>
+        </thead>
+    </table>
+
+    @*<select id="ddlViewBy" onchange="update_status(this)">
+            <option value="1">Artículos</option>
+            <option value="2">Colaboración en Eventos Externos</option>
+            <option value="3">Curso No Remunerado</option>
+            <option value="4">Desarrollo de Software</option>
+            <option value="5">Libros</option>
+            <option value="6">Obra Administrativa de Desarrollo</option>
+            <option value="7">Obra Artística</option>
+            <option value="8">Obra Didáctica</option>
+            <option value="9">Otra Obra Profesional</option>
+            <option value="10">Patente de Invención</option>
+            <option value="11">Proyectos de Graduación Galardonados</option>
+            <option value="12">Actividad para el Fortalecimiento de la Investigación y Extensión</option>
+            <option value="13">Capacitación Interna</option>
+            <option value="14">Colaboración en Eventos Externos</option>
+            <option value="15">Curso de Educación Continua</option>
+            <option value="16">Curso Libre</option>
+            <option value="17">Diseño Industrial</option>
+            <option value="18">Jurado de Premios Nacionales</option>
+            <option value="19">Membresía en Consejos Editoriales</option>
+            <option value="20">Membresía a Organismos Extrainstitucionales</option>
+            <option value="21">Modelo Industrial</option>
+            <option value="22">Modelo de Utilidad</option>
+            <option value="23">Obtención Vegetal</option>
+            <option value="24">Organización de Eventos de Proyección Externa</option>
+            <option value="25">Participación Destacada en Eventos Deportivos</option>
+            <option value="26">Participación Destacada en Eventos de Proyección Externa</option>
+            <option value="27">Premios Nacionales e Internacionales</option>
+            <option value="28">Proyecto de Investigación y Extensión</option>
+            <option value="29">Publicaciones y Divulgaciones Científicas y Culturales en un Medio de Comunicación Masiva</option>
+            <option value="30">Secreto</option>
+            <option value="31">Sistema de Trazado de Circuitos Integrados</option>
+            <option value="32">Trabajo Docente No Remunerado de Carreras del ITCR</option>
+            <option value="33">Capacitación Profesional</option>
+            <option value="34">Conocimiento y Manejo de Software</option>
+            <option value="35">Grados Académicos</option>
+            <option value="36">Idiomas</option>
+            <option value="37">Designación Para Realizar Labores Especiales</option>
+            <option value="38">Director/a de Departamento o Rango Superior</option>
+            <option value="39">Miembro/a de Órganos Institucionales</option>
+            <option value="40">Participación en Comisiones Institucionales</option>
+            <option value="41">Participación en el Congreso Institucional</option>
+            <option value="42">Responsable de Unidad</option>
+        </select>
+
+        <script type="text/javascript">
+            var nombreTabla = "Articulo";
+            function update_status(selected_option) {
+
+                switch (selected_option.value) {
+                    case "1":
+                        nombreTabla = "Articulo"
+                        console.log(nombreTabla);
+                        break;
+                    case "2":
+                        nombreTabla = "ColaboracionEvento"
+                        console.log(nombreTabla);
+                        break;
+                    case "3":
+                        nombreTabla = "CursoNoRemunerado"
+                        console.log(nombreTabla);
+                        break;
+                    case "4":
+                        nombreTabla = "DesarrolloSoftware"
+                        console.log(nombreTabla);
+                        break;
+                    case "5":
+                        nombreTabla = "Libro"
+                        console.log(nombreTabla);
+                        break;
+                    case "6":
+                        nombreTabla = "ObraAdministrativaDesarrollo"
+                        console.log(nombreTabla);
+                        break;
+                    case "7":
+                        nombreTabla = "ObraArtistica"
+                        console.log(nombreTabla);
+                        break;
+                    case "8":
+                        nombreTabla = "ObraDidactica"
+                        console.log(nombreTabla);
+                        break;
+                    case "9":
+                        nombreTabla = "OtraObraProfesional"
+                        console.log(nombreTabla);
+                        break;
+                    case "10":
+                        nombreTabla = "Patente"
+                        console.log(nombreTabla);
+                        break;
+                    case "11":
+                        nombreTabla = "ProyectoGraduacionGalardonado"
+                        console.log(nombreTabla);
+                        break;
+                    case "12":
+                        nombreTabla = "AcrividadFortalecimiento"
+                        console.log(nombreTabla);
+                        break;
+                    case "13":
+                        nombreTabla = "CapacitacionInterna"
+                        console.log(nombreTabla);
+                        break;
+                    case "14":
+                        nombreTabla = "ColaboracionExterno"
+                        console.log(nombreTabla);
+                        break;
+                    case "15":
+                        nombreTabla = "CursoContinuo"
+                        console.log(nombreTabla);
+                        break;
+                    case "16":
+                        nombreTabla = "CursoLibre"
+                        console.log(nombreTabla);
+                        break;
+                    case "17":
+                        nombreTabla = "DisenoIndustrial"
+                        console.log(nombreTabla);
+                        break;
+                    case "18":
+                        nombreTabla = "Jurado"
+                        console.log(nombreTabla);
+                        break;
+                    case "19":
+                        nombreTabla = "MembresiaConsejos"
+                        console.log(nombreTabla);
+                        break;
+                    case "20":
+                        nombreTabla = "MembresiaOrganismos"
+                        console.log(nombreTabla);
+                        break;
+                    case "21":
+                        nombreTabla = "ModeloIndustrial"
+                        console.log(nombreTabla);
+                        break;
+                    case "22":
+                        nombreTabla = "ModeloUtilidad"
+                        console.log(nombreTabla);
+                        break;
+                    case "23":
+                        nombreTabla = "ObtencionVegetal"
+                        console.log(nombreTabla);
+                        break;
+                    case "24":
+                        nombreTabla = "OrganizacionEvento"
+                        console.log(nombreTabla);
+                        break;
+                    case "25":
+                        nombreTabla = "ParticipacionDeportiva"
+                        console.log(nombreTabla);
+                        break;
+                    case "26":
+                        nombreTabla = "ParticipacionDestacada"
+                        console.log(nombreTabla);
+                        break;
+                    case "27":
+                        nombreTabla = "PremioNacional"
+                        console.log(nombreTabla);
+                        break;
+                    case "28":
+                        nombreTabla = "ProyectoInvestigacion"
+                        console.log(nombreTabla);
+                        break;
+                    case "29":
+                        nombreTabla = "Publicacion"
+                        console.log(nombreTabla);
+                        break;
+                    case "30":
+                        nombreTabla = "Secreto"
+                        console.log(nombreTabla);
+                        break;
+                    case "31":
+                        nombreTabla = "SistemaCI"
+                        console.log(nombreTabla);
+                        break;
+                    case "32":
+                        nombreTabla = "TrabajoNoRemunerado"
+                        console.log(nombreTabla);
+                        break;
+                    case "33":
+                        nombreTabla = "CapacitacionProfesional"
+                        console.log(nombreTabla);
+                        break;
+                    case "34":
+                        nombreTabla = "ConocimientoSoftware"
+                        console.log(nombreTabla);
+                        break;
+                    case "35":
+                        nombreTabla = "GradoAcademico"
+                        console.log(nombreTabla);
+                        break;
+                    case "36":
+                        nombreTabla = "Idioma"
+                        console.log(nombreTabla);
+                        break;
+                    case "37":
+                        nombreTabla = "Designacion"
+                        console.log(nombreTabla);
+                        break;
+                    case "38":
+                        nombreTabla = "DireccionRangoSuperior"
+                        console.log(nombreTabla);
+                        break;
+                    case "39":
+                        nombreTabla = "MiembroOrganos"
+                        console.log(nombreTabla);
+                        break;
+                    case "40":
+                        nombreTabla = "ParticipacionComision"
+                        console.log(nombreTabla);
+                        break;
+                    case "41":
+                        nombreTabla = "ParticipacionCongreso"
+                        console.log(nombreTabla);
+                        break;
+                    case "42":
+                        nombreTabla = "ResponsableUnidad"
+                        console.log(nombreTabla);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        </script>*@
+
+    <script>
+        var $table = $('#table')
+
+        $(function () {
+            $('label input').blur(function () {
+                var icons = {}
+                $('label').each(function () {
+                    icons[$(this).find('span').text()] = $(this).find('input').val()
+                })
+                $table.bootstrapTable('destroy').bootstrapTable({
+                    icons: icons
+                })
+            })
+        })
+    </script>
+
+
+    <script type="text/javascript">
+        var $table = $('#table')
+
+@*        function operateFormatter(value, row, index) {
+
+            var fileName = "Presentacion Inferencia.pdf";
+            var tableName = "Patente";
+            var location = '@Url.Action("CreateBuscarAtestados2", "BuscarAtestados")?fileName=' + fileName + '&tableName=' + tableName;
+            return [
+                `<a class="like" href=` + '@Url.Action("CreateBuscarAtestados2", "BuscarAtestados")?fileName=' + fileName + '&tableName=' + tableName; +  `>`,
+                '<i class="fa fa-heart"></i>',
+                '</a>  ',
+            ].join('')
+        }*@
+
+        function detailFormatter(index, row) {
+            var html = []
+            $.each(row, function (key, value) {
+                var llave;
+                if (key == "persona") {
+                    llave = "Nombre de quien ingresó el astestado"
+                }
+                if (key == "name") {
+                    llave = "Nombre del Atestado"
+                }
+                if (key == "tipo") {
+                    llave = "Tipo del Atestado"
+                }
+                if (key == "filename") {
+                    llave = "Nombre del archivo"
+                }
+                if (key == "autor") {
+                    llave = "Nombre del Autor"
+                }
+                html.push('<p><b>' + llave + ':</b> ' + value + '</p>')
+            })
+            return html.join('')
+        }
+
+        window.operateEvents = {
+            'click .like': function (e, value, row, index) {
+                alert('You click like action, row: ' + row.persona)
+                $.ajax({
+                url: '@Url.Action("CreateBuscarAtestados2", "BuscarAtestados")',
+                type: 'GET',
+                data: { fileName: "Presentacion Inferencia.pdf", tableName : "Patente" },
+                success: function(result) {
+
+                    }
+            });
+            },
+        }
+
+                window.actionEvents = {
+                    'click .btn': function (row) {
+
+                    }
+                }
+
+        function actionFormatter(row) {
+            console.log(row);
+            //Esto hay que arreglarlo para que muestre cada archivo dependiendo de la fila seleccionada.
+            //Esta linea comentada es un ejemplo de como funciona para un archivo especifico de una tabla especifica
+            //en este caso, el nombre del archivo seria Presentacion Inferencia.pdf y la tabla se llama Patente
+
+            @*return '<button class="btn btn-secondary" type="button" onclick="location.href=`@Url.Action("CreateBuscarAtestados2", "BuscarAtestados", new { fileName = "Presentacion Inferencia.pdf", tableName = "Patente" })`">Ver</button>'*@
+            return '<button class="btn btn-secondary" type="button" >Ver</button>'
+
+                }
+        function export_excel() {
+            $table.tableExport({ type: 'excel' });
+        }
+
+                $(function () {
+                    var data = [
+
+                    ];
+                    @foreach(var item in Model.resultado)
+                    {
+                        <text>data.push({
+                        @*'fileid': @item.fileId,*@
+                        'persona': "@item.Persona",
+                        'name': "@item.Nombre",
+                        'tipo': "@item.tipoAtestado",
+                        'filename': "@item.fileName",
+                        'autor': "@item.autores"});</text>
+                    }
+                    console.log(data);
+                    $table.bootstrapTable({ data: data })
+                })
+    </script>
+
+</div>
+
+}
