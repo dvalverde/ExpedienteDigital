@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="wrapper fadeIn">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width:100vw;height:50px; position:fixed; top:0px;">
+        <a class="navbar-brand" href="" style="color:#808080">Comisión de Carrera Profesional</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+    </nav>
+
+    <br />
+    <br />
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <div class="logo-image">
+                    <img class="img-fluid" src="~/images/logo-tec.png" width="250" height="250">
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <form action="@Url.Content("~/Login/Login")" method="post">
+                <input type="text" id="User" class="fadeIn second" name="User" placeholder="login" required>
+                <input type="password" id="Pass" class="fadeIn third" name="Pass" placeholder="password" required>
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+            <div class="text-danger">
+                @ViewBag.Error
+            </div>
+
+
+
+        </div>
+    </div>
+    <footer class="border-top footer" style="color:#ffffff; width:100vw; position:fixed; bottom:10px;">
+        <div class="container">
+            &copy; 2020 - Comision de Carrera Profesional - <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </div>
+    </footer>    
+</div>
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,84 @@
+﻿@model ExpDigital.Models.MembresiaConsejo
+
+@{
+    ViewBag.Title = "CreateMembresiaConsejo";
+}
+
+
+@using (Html.BeginForm("CreateMembresiaConsejo", "MembresiaConsejo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            @if (ViewBag.membresiaConsejoAgregado != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Membresía en Consejos Editoriales Agregada!</strong> La Membresía en Consejos Editoriales se agregó satisfactoriamente.
+                </div>
+            }
+            @if (ViewBag.errorMembresiaConsejo != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar la Membresía en Consejos Editoriales.
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-color: #eeeeee">
+                <h1>Membresía en Consejos Editoriales</h1>
+                <br />
+                <br />
+                <p class="text-info">Complete la información correspondiente</p>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Nombre del Consejo</label>
+                            <div>
+                                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                    <p>Tipo de Consejo Editorial</p>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        @Html.RadioButtonFor(m => m.tipo, "0", new { @class = "form-control col-md-3" })@Html.Label("Permanente", new { @class = "radio-labels col-md-5" })
+                        @Html.RadioButtonFor(m => m.tipo, "1", new { @class = "form-control col-md-3" })@Html.Label("Transitorio", new { @class = "radio-labels col-md-6" })
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <p class="text-info">Subir PDF:</p>
+                    <div class="form-group mt-3 col-md-10">
+                        <input type="file" name="upload" required />
+                        @*<input type="file" id="file" name="file" value="ActionHandlerForForm" />*@
+                        @* @Html.TextBoxFor(model => model.file, new { type = "file" })
+                            <input type="submit" id="btnUpload" value="Upload" />*@
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <input type="submit" value="Aceptar" class="btn btn-primary" />
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+}
+
+
