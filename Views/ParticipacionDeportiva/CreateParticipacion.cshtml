@@ -1,0 +1,85 @@
+﻿@model ExpDigital.Models.ParticipacionDeportiva
+
+@{
+    ViewBag.Title = "CreateParti";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("CreateParti", "ParticipacionDeportiva", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content-container">
+
+        <div class="container-fluid">
+            <!--Verifico si hay un error o si se agrego un libro-->
+            @if (ViewBag.parDeporAgre != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Participacion Agregada!</strong> la participacion deportiva se agregó satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorPD != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo agregar la participacion.
+                </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron" style="background-color: #eeeeee">
+            <h1>Participación Destacada en Eventos Deportivos</h1>
+            <br />
+            <br />
+            <p class="text-info">Complete la información correspondiente</p>
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Nombre del Evento</label>
+                    <div>
+                        @Html.EditorFor(model => model.nombreEvento, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                        @Html.ValidationMessageFor(model => model.nombreEvento, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Nombre del Lugar</label>
+                    <div>
+                        @Html.EditorFor(model => model.nombreLugar, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nombreLugar, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="text-info">Subir PDF:</p>
+            <div class="form-group mt-3 col-md-10">
+                <input type="file" name="upload" required />
+                @*<input type="file" id="file" name="file" value="ActionHandlerForForm" />*@
+                @* @Html.TextBoxFor(model => model.file, new { type = "file" })
+            <input type="submit" id="btnUpload" value="Upload" />*@
+            </div>
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+        </form>
+
+        </div>
+        </div>
+    </div>
+
+
+
+}
+          
