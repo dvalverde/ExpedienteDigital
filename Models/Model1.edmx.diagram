@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c6b9dca2d0141939d2864ac2277e210" Name="Diagram1" ZoomLevel="21">
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ActividadFortalecimiento" Width="1.5" PointX="0.75" PointY="58" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Articulo" Width="1.5" PointX="3.75" PointY="88.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Autor" Width="1.5" PointX="17.75" PointY="25.75" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXActividadFortalecimiento" Width="1.5" PointX="20" PointY="42" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXArticulo" Width="1.5" PointX="20" PointY="60.625" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXCapitulo" Width="1.5" PointX="23" PointY="62" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXColaboracionEvento" Width="1.5" PointX="23" PointY="65.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXCursoCentroCapacitacion" Width="1.5" PointX="20" PointY="67" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXDesarrolloSoftware" Width="1.5" PointX="20" PointY="53.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXObraAdministrativaDesarrollo" Width="1.5" PointX="20" PointY="32.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXObraArtistica" Width="1.5" PointX="23" PointY="37.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXObraDidactica" Width="1.5" PointX="23" PointY="52.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXOrganizacionEvento" Width="1.5" PointX="26" PointY="57" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXOtraObraProfesional" Width="1.5" PointX="20" PointY="51" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXParticipacionDeportiva" Width="1.5" PointX="20" PointY="64" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXParticipacionDestacada" Width="1.5" PointX="26" PointY="60" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXPatente" Width="1.5" PointX="23" PointY="58.375" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXPonenciaCongreso" Width="1.5" PointX="20" PointY="38.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXProyectoGraduacion" Width="1.5" PointX="20" PointY="35.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXProyectoInvestigacion" Width="1.5" PointX="23" PointY="55.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.AutorXPublicacion" Width="1.5" PointX="20" PointY="57.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CapacitacionInterna" Width="1.5" PointX="3.75" PointY="93.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CapacitacionProfesional" Width="1.5" PointX="3.75" PointY="52.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Capitulo" Width="1.5" PointX="9.75" PointY="91.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CitaDeAtestado" Width="1.5" PointX="9.75" PointY="82.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ColaboracionEvento" Width="1.5" PointX="3.75" PointY="99" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ComisionInstitucional" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ConocimientoSoftware" Width="1.5" PointX="6.75" PointY="52" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CursoCentroCapacitacion" Width="1.5" PointX="6.75" PointY="101.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CursoContinuo" Width="1.5" PointX="9.75" PointY="88.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CursoLibre" Width="1.5" PointX="0.75" PointY="79.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.CursoNoRemunerado" Width="1.5" PointX="9.75" PointY="49.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DesarrolloSoftware" Width="1.5" PointX="6.75" PointY="82" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Designacion" Width="1.5" PointX="12.75" PointY="82.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DireccionRangoSuperior" Width="1.5" PointX="9.75" PointY="98.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DisenoIndustrial" Width="1.5" PointX="0.75" PointY="95.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoActividadFortalecimiento" Width="1.5" PointX="3" PointY="37" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoArticulo" Width="1.5" PointX="6" PointY="117.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoCapacitacionInterna" Width="1.5" PointX="6" PointY="126" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoCapacitacionProfesional" Width="1.5" PointX="6" PointY="37" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoColaboracionEvento" Width="1.5" PointX="6" PointY="121.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoComisionInstitucional" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoConocimientoSoftware" Width="1.5" PointX="9" PointY="32" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoCursoCentroCapacitacion" Width="1.5" PointX="9" PointY="122" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoCursoContinuo" Width="1.5" PointX="12" PointY="107" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoCursoLibre" Width="1.5" PointX="3" PointY="119" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoCursoNoRemunerado" Width="1.5" PointX="12" PointY="33" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoDesarrolloSoftware" Width="1.5" PointX="9" PointY="117.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoDesignacion" Width="1.5" PointX="15" PointY="97" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoDireccionRangoSuperior" Width="1.5" PointX="12" PointY="104" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoDisenoIndustrial" Width="1.5" PointX="3" PointY="116" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoGradoAcademico" Width="1.5" PointX="15" PointY="39" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoIdioma" Width="1.5" PointX="15" PointY="91" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoJurado" Width="1.5" PointX="15" PointY="47" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoLibro" Width="1.5" PointX="9.75" PointY="113.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoMembresiaConsejo" Width="1.5" PointX="15" PointY="52" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoMembresiaOrganismo" Width="1.5" PointX="6" PointY="40" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoMiembroOrgano" Width="1.5" PointX="3" PointY="40" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoModeloIndustrial" Width="1.5" PointX="12" PointY="101" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoModeloUtilidad" Width="1.5" PointX="3" PointY="43" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoObraAdministrativa" Width="1.5" PointX="15" PointY="42.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoObraArtistica" Width="1.5" PointX="9" PointY="35.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoObraDidactica" Width="1.5" PointX="15" PointY="83.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoObtencionVegetal" Width="1.5" PointX="3" PointY="113" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoOrganizacionEvento" Width="1.5" PointX="15" PointY="88" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoOtraObraProfesional" Width="1.5" PointX="3" PointY="108.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoParticipacionAIR" Width="1.5" PointX="3" PointY="105" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoParticipacionComision" Width="1.5" PointX="9" PointY="110" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoParticipacionCongreso" Width="1.5" PointX="3" PointY="102" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoParticipacionDeportiva" Width="1.5" PointX="6" PointY="114" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoParticipacionDestacada" Width="1.5" PointX="15" PointY="94" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoPatente" Width="1.5" PointX="12" PointY="98" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoPonenciaCongreso" Width="1.5" PointX="12" PointY="36" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoPremioNacional" Width="1.5" PointX="9" PointY="107" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoProyectoGraduacion" Width="1.5" PointX="9" PointY="40" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoProyectoInvestigacion" Width="1.5" PointX="6" PointY="109.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoPublicacion" Width="1.5" PointX="9" PointY="104" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoResponsableUnidad" Width="1.5" PointX="6" PointY="106" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoSecreto" Width="1.5" PointX="6" PointY="43" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoSistemaCI" Width="1.5" PointX="12" PointY="39" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.DocumentoTrabajoNoRemunerado" Width="1.5" PointX="9" PointY="101" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.GradoAcademico" Width="1.5" PointX="12.75" PointY="49.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Idioma" Width="1.5" PointX="12.75" PointY="91.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Jurado" Width="1.5" PointX="12.75" PointY="46.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Libro" Width="1.5" PointX="7.5" PointY="91.75" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.MembresiaConsejo" Width="1.5" PointX="12.75" PointY="52.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.MembresiaOrganismo" Width="1.5" PointX="3.75" PointY="49.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.MiembroOrgano" Width="1.5" PointX="0.75" PointY="52.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ModeloIndustrial" Width="1.5" PointX="9.75" PointY="95.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ModeloUtilidad" Width="1.5" PointX="0.75" PointY="55" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ObraAdministrativaDesarrollo" Width="1.5" PointX="12.75" PointY="42.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ObraArtistica" Width="1.5" PointX="6.75" PointY="49" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ObraDidactica" Width="1.5" PointX="12.75" PointY="85" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ObtencionVegetal" Width="1.5" PointX="0.75" PointY="98.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.OrganizacionEvento" Width="1.5" PointX="12.75" PointY="88" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.OtraObraProfesional" Width="1.5" PointX="0.75" PointY="75.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Pai" Width="1.5" PointX="1.5" PointY="89.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ParticipacionAIR" Width="1.5" PointX="0.75" PointY="85.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ParticipacionComision" Width="1.5" PointX="6.75" PointY="99.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ParticipacionCongreso" Width="1.5" PointX="0.75" PointY="92.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ParticipacionDeportiva" Width="1.5" PointX="3.75" PointY="96" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ParticipacionDestacada" Width="1.5" PointX="12.75" PointY="93.875" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Patente" Width="1.5" PointX="9.75" PointY="85.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Persona" Width="1.5" PointX="0.75" PointY="61.5" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXActividadFortalecimiento" Width="1.5" PointX="3" PointY="58.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXArticulo" Width="1.5" PointX="6" PointY="70.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCapacitacionInterna" Width="1.5" PointX="6" PointY="73.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCapacitacionProfesional" Width="1.5" PointX="6" PointY="55.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCapitulo" Width="1.5" PointX="12" PointY="73.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCita" Width="1.5" PointX="12" PointY="64" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXColaboracionEvento" Width="1.5" PointX="6" PointY="79.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXConocimientoSoftware" Width="1.5" PointX="9" PointY="55.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCursoCentroCapacitacion" Width="1.5" PointX="9" PointY="79.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCursoContinuo" Width="1.5" PointX="12" PointY="70.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCursoLibre" Width="1.5" PointX="3" PointY="67.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXCursoNoRemunerado" Width="1.5" PointX="12" PointY="58.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXDesarrolloSoftware" Width="1.5" PointX="9" PointY="64.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXDesignacion" Width="1.5" PointX="15" PointY="67.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXDireccionRangoSuperior" Width="1.5" PointX="12" PointY="79.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXDisenoIndustrial" Width="1.5" PointX="3" PointY="76.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXGradoAcademico" Width="1.5" PointX="15" PointY="58.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXIdioma" Width="1.5" PointX="15" PointY="76.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXJurado" Width="1.5" PointX="15" PointY="61.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXMembresiaConsejo" Width="1.5" PointX="15" PointY="55.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXMembresiaOrganismo" Width="1.5" PointX="6" PointY="58.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXMiembroOrgano" Width="1.5" PointX="3" PointY="61.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXModeloIndustrial" Width="1.5" PointX="12" PointY="76.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXModeloUtilidad" Width="1.5" PointX="3" PointY="55.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXObraAdministrativaDesarrollo" Width="1.5" PointX="15" PointY="64.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXObraArtistica" Width="1.5" PointX="9" PointY="58.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXObraDidactica" Width="1.5" PointX="15" PointY="70.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXObtencionVegetal" Width="1.5" PointX="3" PointY="79.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXOrganizacionEvento" Width="1.5" PointX="15" PointY="73.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXOtraObraProfesional" Width="1.5" PointX="3" PointY="64.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXParticipacionAIR" Width="1.5" PointX="3" PointY="70.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXParticipacionComision" Width="1.5" PointX="9" PointY="76.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXParticipacionCongreso" Width="1.5" PointX="3" PointY="73.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXParticipacionDeportiva" Width="1.5" PointX="6" PointY="76.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXParticipacionDestacada" Width="1.5" PointX="15" PointY="79.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXPatente" Width="1.5" PointX="12" PointY="67.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXPonenciaCongreso" Width="1.5" PointX="12" PointY="55.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXPremioNacional" Width="1.5" PointX="9" PointY="70.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXProyectoGraduacion" Width="1.5" PointX="9" PointY="61.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXProyectoInvestigacion" Width="1.5" PointX="6" PointY="67.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXPublicacion" Width="1.5" PointX="9" PointY="67.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXResponsableUnidad" Width="1.5" PointX="6" PointY="64.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXSecreto" Width="1.5" PointX="6" PointY="61.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXSistemaCI" Width="1.5" PointX="12" PointY="61.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PersonaXTrabajoNoRemunerado" Width="1.5" PointX="9" PointY="73.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PonenciaCongreso" Width="1.5" PointX="9.75" PointY="52.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.PremioNacional" Width="1.5" PointX="6.75" PointY="88.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ProyectoGraduacionGalardonado" Width="1.5" PointX="6.75" PointY="46.125" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ProyectoInvestigacion" Width="1.5" PointX="3.75" PointY="85" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Publicacion" Width="1.5" PointX="6.75" PointY="85" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.ResponsableUnidad" Width="1.5" PointX="3.75" PointY="82.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.Secreto" Width="1.5" PointX="3.75" PointY="46.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.SistemaCI" Width="1.5" PointX="9.75" PointY="46.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.TipoObraAdmi" Width="1.5" PointX="10.5" PointY="43.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.TipoObraProfesional" Width="1.5" PointX="1.5" PointY="82.25" />
+        <EntityTypeShape EntityType="ExpedienteDigitalModel.TrabajoNoRemunerado" Width="1.5" PointX="6.75" PointY="96" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXActividadFortalecimiento_ActividadFortalecimiento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoActividadFortalecimiento_ActividadFortalecimiento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXActividadFortalecimiento_ActividadFortalecimiento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_Articulo_Pais" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXArticulo_Articulo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoArticulo_Articulo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXArticulo_Articulo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXActividadFortalecimiento_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXArticulo_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXCapitulo_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXColaboracionEvento_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXCursoCentroCapacitacion_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXDesarrolloSoftware_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXObraAdministrativaDesarrollo_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXObraArtistica_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXObraDidactica_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXOrganizacionEvento_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXOtraObraProfesional_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXParticipacionDeportiva_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXParticipacionDestacada_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXPatente_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXPonenciaCongreso_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXProyectoGraduacion_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXProyectoInvestigacion_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXPublicacion_Autor" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXCapitulo_Capitulo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXColaboracionEvento_ColaboracionEvento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXCursoCentroCapacitacion_CursoCentroCapacitacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXDesarrolloSoftware_DesarrolloSoftware" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXObraArtistica_ObraArtistica" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXObraDidactica_ObraDidactica" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXOrganizacionEvento_OrganizacionEvento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXOtraObraProfesional_OtraObraProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXParticipacionDeportiva_ParticipacionDeportiva" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXParticipacionDestacada_ParticipacionDestacada" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXPatente_Patente" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXPonenciaCongreso_PonenciaCongreso" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXProyectoGraduacion_ProyectoGraduacionGalardonado" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXProyectoInvestigacion_ProyectoInvestigacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_AutorXPublicacion_Publicacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoCapacitacionInterna_CapacitacionInterna" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCapacitacionInterna_CapacitacionInterna" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoCapacitacionProfesional_CapacitacionProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCapacitacionProfesional_CapacitacionProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_Capitulo_Libro" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCapitulo_Capitulo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCita_CitaDeAtestados" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoColaboracionEvento_ColaboracionEvento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXColaboracionEvento_ColaboracionEvento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoComisionInstitucional_ComisionInstitucional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoConocimientoSoftware_ConocimientoSoftware" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXConocimientoSoftware_ConocimientoSoftware" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoCursoCentroCapacitacion_CursoCentroCapacitacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoCentroCapacitacion_CursoCentroCapacitacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoCursoContinuo_CursoContinuo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoContinuo_CursoContinuo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoCursoLibre_CursoLibre" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoLibre_CursoLibre" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoCursoNoRemunerado_CursoNoRemunerado" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoNoRemunerado_CursoNoRemunerado" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoDesarrolloSoftware_DesarrolloSoftware" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_DesarrolloSoftware" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoDesignacion_Designacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDesignacion_Designacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoDireccionRangoSuperior_DireccionRangoSuperior" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDireccionRangoSuperior_DireccionRangoSuperior" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoDisenoIndustrial_DisenoIndustrial" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDisenoIndustrial_DisenoIndustrial" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoGradoAcademico_GradoAcademico" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoIdioma_Idioma" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoJurado_Jurado" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoLibro_Libro" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoMembresiaConsejos_MembresiaConsejos" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoMembresiaOrganismos_MembresiaOrganismos" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoMiembroOrganos_MiembroOrganos" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoModeloIndustrial_ModeloIndustrial" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoModeloUtilidad_ModeloUtilidad" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoObraAdministrativa_ObraAdministrativa" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoObraArtistica_ObraArtistica" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoObraDidactica_ObraDidactica" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoObtencionVegetal_ObtencionVegetal" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoOrganizacionEvento_OrganizacionEvento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoOtraObraProfesional_OtraObraProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoParticipacionAIR_ParticipacionAIR" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoParticipacionComision_ParticipacionComision" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoParticipacionCongreso_ParticipacionCongreso" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoParticipacionDeportiva_ParticipacionDeportiva" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoParticipacionDestacada_ParticipacionDestacada" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoPatente_Patente" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoPonenciaCongreso_PonenciaCongreso" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoPremioNacional_PremioNacional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoProyectoGraduacion_ProyectoGraduacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoProyectoInvestigacion_ProyectoInvestigacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoPublicacion_Publicacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoResponsableUnidad_ResponsableUnidad" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoSecreto_Secreto" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoSistemaCI_SistemaCI" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_DocumentoTrabajoNoRemunerado_TrabajoNoRemunerado" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXGradoAcademico_GradoAcademico" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXIdioma_Idioma" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXJurado_Jurado" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_Libro_Pais" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXMembresiaConsejos_MembresiaConsejos" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXMembresiaOrganismos_MembresiaOrganismos" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXMiembroOrganos_MiembroOrganos" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXModeloIndustrial_ModeloIndustrial" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXModeloUtilidad_ModeloUtilidad" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_ObraAdministrativaDesarrollo_TipoObraAdmi" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_ObraAdministrativaDesarrollo" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraArtistica_ObraArtistica" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraDidactica_ObraDidactica" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObtencionVegetal_ObtencionVegetal" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXOrganizacionEvento_OrganizacionEvento" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_OtraObraProfesional_TipoObraProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_OtraObraProfesional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionAIR_ParticipacionAIR" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionComision_ParticipacionComision" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionCongreso_ParticipacionCongreso" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionDeportiva_ParticipacionDeportiva" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionDestacada_ParticipacionDestacada" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPatente_Patente" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXActividadFortalecimiento_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXArticulo_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCapacitacionInterna_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCapacitacionProfesional_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCapitulo_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCita_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXColaboracionEvento_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXConocimientoSoftware_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoCentroCapacitacion_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoContinuo_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoLibre_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXCursoNoRemunerado_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDesarrolloSoftware_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDesignacion_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDireccionRangoSuperior_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXDisenoIndustrial_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXGradoAcademico_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXIdioma_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXJurado_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXMembresiaConsejos_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXMembresiaOrganismos_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXMiembroOrganos_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXModeloIndustrial_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXModeloUtilidad_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraAdministrativaDesarrollo_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraArtistica_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObraDidactica_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXObtencionVegetal_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXOrganizacionEvento_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXOtraObraProfesional_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionAIR_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionComision_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionCongreso_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionDeportiva_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXParticipacionDestacada_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPatente_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPonenciaCongreso_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPremioNacional_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXProyectoGraduacion_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXProyectoInvestigacion_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPublicacion_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXResponsableUnidad_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXSecreto_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXSistemaCI_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXTrabajoNoRemunerado_Persona" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPonenciaCongreso_PonenciaCongreso" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPremioNacional_PremioNacional" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXProyectoGraduacion_ProyectoGraduacionGalardonado" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXProyectoInvestigacion_ProyectoInvestigacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXPublicacion_Publicacion" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXResponsableUnidad_ResponsableUnidad" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXSecreto_Secreto" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXSistemaCI_SistemaCI" />
+        <AssociationConnector Association="ExpedienteDigitalModel.FK_PersonaXTrabajoNoRemunerado_TrabajoNoRemunerado" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
