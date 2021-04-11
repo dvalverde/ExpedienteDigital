@@ -1,0 +1,65 @@
+/****** Object:  Table [dbo].[PersonaXCapacitacionInterna]    Script Date: 11/12/2020 5:25:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PersonaXCapacitacionInterna](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[id_persona] [int] NOT NULL,
+	[id_capacitacion] [int] NOT NULL,
+ CONSTRAINT [PK_PersonaXCapacitacionInterna] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[DocumentoCapacitacionInterna]  WITH CHECK ADD  CONSTRAINT [FK_DocumentoCapacitacionInterna_CapacitacionInterna] FOREIGN KEY([id_capacitacion])
+REFERENCES [dbo].[CapacitacionInterna] ([ID])
+GO
+ALTER TABLE [dbo].[DocumentoCapacitacionInterna] CHECK CONSTRAINT [FK_DocumentoCapacitacionInterna_CapacitacionInterna]
+GO
+
+ALTER TABLE [dbo].[PersonaXCapacitacionInterna]  WITH CHECK ADD  CONSTRAINT [FK_PersonaXCapacitacionInterna_CapacitacionInterna] FOREIGN KEY([id_capacitacion])
+REFERENCES [dbo].[CapacitacionInterna] ([ID])
+GO
+ALTER TABLE [dbo].[PersonaXCapacitacionInterna] CHECK CONSTRAINT [FK_PersonaXCapacitacionInterna_CapacitacionInterna]
+GO
+ALTER TABLE [dbo].[PersonaXCapacitacionInterna]  WITH CHECK ADD  CONSTRAINT [FK_PersonaXCapacitacionInterna_Persona] FOREIGN KEY([id_persona])
+REFERENCES [dbo].[Persona] ([ID])
+GO
+ALTER TABLE [dbo].[PersonaXCapacitacionInterna] CHECK CONSTRAINT [FK_PersonaXCapacitacionInterna_Persona]
+GO
+
+/****** Object:  Table [dbo].[PersonaXModeloIndustrial]    Script Date: 11/12/2020 5:25:13 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PersonaXModeloIndustrial](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[id_persona] [int] NOT NULL,
+	[id_modelo] [int] NOT NULL,
+ CONSTRAINT [PK_PersonaXModeloIndustrial] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[DocumentoModeloIndustrial]  WITH CHECK ADD  CONSTRAINT [FK_DocumentoModeloIndustrial_ModeloIndustrial] FOREIGN KEY([id_modelo])
+REFERENCES [dbo].[ModeloIndustrial] ([ID])
+GO
+ALTER TABLE [dbo].[DocumentoModeloIndustrial] CHECK CONSTRAINT [FK_DocumentoModeloIndustrial_ModeloIndustrial]
+GO
+
+ALTER TABLE [dbo].[PersonaXModeloIndustrial]  WITH CHECK ADD  CONSTRAINT [FK_PersonaXModeloIndustrial_ModeloIndustrial] FOREIGN KEY([id_modelo])
+REFERENCES [dbo].[ModeloIndustrial] ([ID])
+GO
+ALTER TABLE [dbo].[PersonaXModeloIndustrial] CHECK CONSTRAINT [FK_PersonaXModeloIndustrial_ModeloIndustrial]
+GO
+ALTER TABLE [dbo].[PersonaXModeloIndustrial]  WITH CHECK ADD  CONSTRAINT [FK_PersonaXModeloIndustrial_Persona] FOREIGN KEY([id_persona])
+REFERENCES [dbo].[Persona] ([ID])
+GO
+ALTER TABLE [dbo].[PersonaXModeloIndustrial] CHECK CONSTRAINT [FK_PersonaXModeloIndustrial_Persona]
+GO

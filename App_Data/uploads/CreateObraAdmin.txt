@@ -1,0 +1,131 @@
+@model ExpDigital.ViewModels.ObraAdminAutor
+
+@{
+    ViewBag.Title = "CreateObraAdmin";
+}
+
+
+@using (Html.BeginForm("CreateObraAdmin", "ObraAdministrativaDesarrollo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="content-container">
+
+        <div class="container-fluid">
+
+            @if (ViewBag.obraAgregado != null)
+            {
+            <div class="alert alert-success">
+                <strong>Obra Administrativa de Desarrollo Agregada!</strong> La Obra Administrativa de Desarrollo se agregó satisfactoriamente
+            </div>
+            }
+            @if (ViewBag.errorObra != null)
+            {
+        <div class="alert alert-danger">
+            <strong>Error!</strong> No se pudo agregar la Obra Administrativa de Desarrollo.
+        </div>
+            }
+
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="jumbotron" style="background-color: #eeeeee">
+                <h1>Obra Administrativa De Desarrollo</h1>
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form onsubmit="submitObraAdmin">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Título de la Obra Administrativa</label>
+                            <div>
+                                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.titulo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Número de autores</label>
+                            @Html.DropDownListFor(m => m.numeroAutores, Enumerable.Range(1, 100).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }), new { @class = "form-control col-md-8", @required = "required", @id = "selectObraAdminDesarrollo", @onclick = "selectObraAdminDesarrollo" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            @*<label for="inputEmail4">Tipo</label>
+                        <div>
+                            @Html.DropDownListFor(m => m.id_tipo, ViewBag.Pais as SelectList, new { @class = "form-control col-md-8" })
+                        </div>*@
+                            <label for="inputEmail4">Tipo</label>
+                            <div>
+                                @Html.DropDownList("id_tipo", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.id_tipo, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="row clearfix">
+                                    <div class="col-md-12 column">
+                                        <table class="table table-striped" id="tab_logic_admin" style="display:none">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">
+                                                        #
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Nombre del autor
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Correo electrónico
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Distribución porcentual de autoría
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @for (int i = 0; i < 100; i++)
+                                                {
+                                                    <tr id=@i>
+                                                        <td>
+                                                            @i
+                                                        </td>
+                                                        <td>
+                                                            @Html.EditorFor(model => model.autores[i].nombre, new { htmlAttributes = new { @class = "form-control" } })
+                                                        </td>
+                                                        <td>
+                                                            @Html.EditorFor(model => model.autores[i].correoElectronico, new { htmlAttributes = new { @class = "form-control" } })
+                                                        </td>
+                                                        <td>
+                                                            @Html.EditorFor(model => model.autorXObrasAdmin[i].distribucionAutoria, new { htmlAttributes = new { @class = "form-control" } })
+                                                        </td>
+
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <p class="text-info">Cargar Obra Administrativa de Desarrollo:</p>
+                            <input type="file" name="upload">
+                        </div>
+                        <div class="form-group col-md-5">
+                            <p class="text-info">Certificación del Superior Jerárquico:</p>
+                            <input type="file" name="uploadCert">
+                        </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-outline-primary" runat="server">Agregar otra Obra</button>
+                    @*<button type="submit" class="btn btn-primary" runat="server">Aceptar</button>*@
+                    <input type="submit" value="Aceptar" class="btn btn-primary" />
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+}
