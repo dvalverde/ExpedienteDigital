@@ -6,7 +6,6 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Articulo">
     <Key>
@@ -19,7 +18,6 @@
     <Property Name="revista" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="id_pais" Type="int" Nullable="false" />
     <Property Name="consejoEditorial" Type="varchar" MaxLength="50" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Autor">
     <Key>
@@ -187,7 +185,6 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar(max)" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="CapacitacionProfesional">
     <Key>
@@ -195,7 +192,6 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Capitulo">
     <Key>
@@ -205,7 +201,6 @@
     <Property Name="titulo" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="numeroAutores" Type="int" Nullable="false" />
     <Property Name="id_libro" Type="int" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="CitaDeAtestados">
     <Key>
@@ -224,13 +219,20 @@
     <Property Name="nombreEvento" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="nombreEntidad" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="ColaboracionExterno">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="anno" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
   <EntityType Name="ComisionInstitucional">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar(max)" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="ConocimientoSoftware">
     <Key>
@@ -239,7 +241,6 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="tipoSoftware" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="CursoCentroCapacitacion">
     <Key>
@@ -248,7 +249,6 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="anno" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="CursoContinuo">
     <Key>
@@ -352,6 +352,16 @@
     <Property Name="FileName" Type="varchar(max)" />
     <Property Name="FileStreamCol" Type="varbinary(max)" />
     <Property Name="tipo" Type="int" Nullable="false" />
+    <Property Name="id_colaboracion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentoColaboracionExterno">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileName" Type="varchar(max)" />
+    <Property Name="FileStreamCol" Type="varbinary(max)" />
     <Property Name="id_colaboracion" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="DocumentoComisionInstitucional">
@@ -938,23 +948,19 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="cedula" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="apellido1" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="apellido2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="cedula" Type="varchar" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="apellido1" Type="varchar" MaxLength="100" />
+    <Property Name="apellido2" Type="varchar" MaxLength="100" />
     <Property Name="username" Type="varchar" MaxLength="50" />
-    <Property Name="password" Type="varchar" MaxLength="50" />
-    <Property Name="categoria" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="varchar(max)" Nullable="false" />
+    <Property Name="categoria" Type="varchar" MaxLength="100" />
     <Property Name="rol" Type="int" Nullable="false" />
     <Property Name="telefono" Type="varchar" MaxLength="50" />
     <Property Name="celular" Type="varchar" MaxLength="50" />
     <Property Name="puesto" Type="varchar" MaxLength="100" />
     <Property Name="correoElectronico" Type="varchar" MaxLength="150" />
     <Property Name="departamento" Type="varchar" MaxLength="150" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
-    <Property Name="fechaModificacion" Type="datetime" />
-    <Property Name="activo" Type="bit" Nullable="false" />
-    <Property Name="diasLimite" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="PersonaXActividadFortalecimiento">
     <Key>
@@ -1006,6 +1012,14 @@
     <Property Name="fechaEntrega" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="PersonaXColaboracionEvento">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_persona" Type="int" Nullable="false" />
+    <Property Name="id_colaboracion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaXColaboracionExterno">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -1345,7 +1359,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="medioDivulgacion" Type="varbinary" MaxLength="150" Nullable="false" />
+    <Property Name="medioDivulgacion" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Publicacion">
     <Key>
@@ -1397,7 +1411,6 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="periodoLectivo" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
   </EntityType>
   <Association Name="FK_Articulo_Pais">
     <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
@@ -1911,6 +1924,18 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="DocumentoColaboracionEvento">
+        <PropertyRef Name="id_colaboracion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DocumentoColaboracionExterno_ColaboracionExterno">
+    <End Role="ColaboracionExterno" Type="Self.ColaboracionExterno" Multiplicity="1" />
+    <End Role="DocumentoColaboracionExterno" Type="Self.DocumentoColaboracionExterno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ColaboracionExterno">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DocumentoColaboracionExterno">
         <PropertyRef Name="id_colaboracion" />
       </Dependent>
     </ReferentialConstraint>
@@ -2595,6 +2620,30 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="PersonaXColaboracionEvento">
+        <PropertyRef Name="id_persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXColaboracionExterno_ColaboracionExterno">
+    <End Role="ColaboracionExterno" Type="Self.ColaboracionExterno" Multiplicity="1" />
+    <End Role="PersonaXColaboracionExterno" Type="Self.PersonaXColaboracionExterno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ColaboracionExterno">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXColaboracionExterno">
+        <PropertyRef Name="id_colaboracion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonaXColaboracionExterno_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PersonaXColaboracionExterno" Type="Self.PersonaXColaboracionExterno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PersonaXColaboracionExterno">
         <PropertyRef Name="id_persona" />
       </Dependent>
     </ReferentialConstraint>
@@ -3538,6 +3587,7 @@
     <EntitySet Name="Capitulo" EntityType="Self.Capitulo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CitaDeAtestados" EntityType="Self.CitaDeAtestados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ColaboracionEvento" EntityType="Self.ColaboracionEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColaboracionExterno" EntityType="Self.ColaboracionExterno" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ComisionInstitucional" EntityType="Self.ComisionInstitucional" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ConocimientoSoftware" EntityType="Self.ConocimientoSoftware" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CursoCentroCapacitacion" EntityType="Self.CursoCentroCapacitacion" Schema="dbo" store:Type="Tables" />
@@ -3553,6 +3603,7 @@
     <EntitySet Name="DocumentoCapacitacionInterna" EntityType="Self.DocumentoCapacitacionInterna" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DocumentoCapacitacionProfesional" EntityType="Self.DocumentoCapacitacionProfesional" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DocumentoColaboracionEvento" EntityType="Self.DocumentoColaboracionEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentoColaboracionExterno" EntityType="Self.DocumentoColaboracionExterno" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DocumentoComisionInstitucional" EntityType="Self.DocumentoComisionInstitucional" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DocumentoConocimientoSoftware" EntityType="Self.DocumentoConocimientoSoftware" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DocumentoCursoCentroCapacitacion" EntityType="Self.DocumentoCursoCentroCapacitacion" Schema="dbo" store:Type="Tables" />
@@ -3623,6 +3674,7 @@
     <EntitySet Name="PersonaXCapitulo" EntityType="Self.PersonaXCapitulo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PersonaXCita" EntityType="Self.PersonaXCita" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PersonaXColaboracionEvento" EntityType="Self.PersonaXColaboracionEvento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonaXColaboracionExterno" EntityType="Self.PersonaXColaboracionExterno" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PersonaXConocimientoSoftware" EntityType="Self.PersonaXConocimientoSoftware" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PersonaXCursoCentroCapacitacion" EntityType="Self.PersonaXCursoCentroCapacitacion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PersonaXCursoContinuo" EntityType="Self.PersonaXCursoContinuo" Schema="dbo" store:Type="Tables" />
@@ -3843,6 +3895,10 @@
     <AssociationSet Name="FK_DocumentoColaboracionEvento_ColaboracionEvento" Association="Self.FK_DocumentoColaboracionEvento_ColaboracionEvento">
       <End Role="ColaboracionEvento" EntitySet="ColaboracionEvento" />
       <End Role="DocumentoColaboracionEvento" EntitySet="DocumentoColaboracionEvento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DocumentoColaboracionExterno_ColaboracionExterno" Association="Self.FK_DocumentoColaboracionExterno_ColaboracionExterno">
+      <End Role="ColaboracionExterno" EntitySet="ColaboracionExterno" />
+      <End Role="DocumentoColaboracionExterno" EntitySet="DocumentoColaboracionExterno" />
     </AssociationSet>
     <AssociationSet Name="FK_DocumentoComisionInstitucional_ComisionInstitucional" Association="Self.FK_DocumentoComisionInstitucional_ComisionInstitucional">
       <End Role="ComisionInstitucional" EntitySet="ComisionInstitucional" />
@@ -4071,6 +4127,14 @@
     <AssociationSet Name="FK_PersonaXColaboracionEvento_Persona" Association="Self.FK_PersonaXColaboracionEvento_Persona">
       <End Role="Persona" EntitySet="Persona" />
       <End Role="PersonaXColaboracionEvento" EntitySet="PersonaXColaboracionEvento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXColaboracionExterno_ColaboracionExterno" Association="Self.FK_PersonaXColaboracionExterno_ColaboracionExterno">
+      <End Role="ColaboracionExterno" EntitySet="ColaboracionExterno" />
+      <End Role="PersonaXColaboracionExterno" EntitySet="PersonaXColaboracionExterno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonaXColaboracionExterno_Persona" Association="Self.FK_PersonaXColaboracionExterno_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PersonaXColaboracionExterno" EntitySet="PersonaXColaboracionExterno" />
     </AssociationSet>
     <AssociationSet Name="FK_PersonaXConocimientoSoftware_ConocimientoSoftware" Association="Self.FK_PersonaXConocimientoSoftware_ConocimientoSoftware">
       <End Role="ConocimientoSoftware" EntitySet="ConocimientoSoftware" />

@@ -4,7 +4,6 @@
     <EntitySetMapping Name="ActividadFortalecimientoes">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.ActividadFortalecimiento">
         <MappingFragment StoreEntitySet="ActividadFortalecimiento">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -13,7 +12,6 @@
     <EntitySetMapping Name="Articuloes">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.Articulo">
         <MappingFragment StoreEntitySet="Articulo">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="consejoEditorial" ColumnName="consejoEditorial" />
           <ScalarProperty Name="id_pais" ColumnName="id_pais" />
           <ScalarProperty Name="revista" ColumnName="revista" />
@@ -206,7 +204,6 @@
     <EntitySetMapping Name="CapacitacionInternas">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.CapacitacionInterna">
         <MappingFragment StoreEntitySet="CapacitacionInterna">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -215,7 +212,6 @@
     <EntitySetMapping Name="CapacitacionProfesionals">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.CapacitacionProfesional">
         <MappingFragment StoreEntitySet="CapacitacionProfesional">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -224,7 +220,6 @@
     <EntitySetMapping Name="Capituloes">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.Capitulo">
         <MappingFragment StoreEntitySet="Capitulo">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="id_libro" ColumnName="id_libro" />
           <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
           <ScalarProperty Name="titulo" ColumnName="titulo" />
@@ -251,10 +246,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ColaboracionExternoes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.ColaboracionExterno">
+        <MappingFragment StoreEntitySet="ColaboracionExterno">
+          <ScalarProperty Name="anno" ColumnName="anno" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ComisionInstitucionals">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.ComisionInstitucional">
         <MappingFragment StoreEntitySet="ComisionInstitucional">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -263,7 +266,6 @@
     <EntitySetMapping Name="ConocimientoSoftwares">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.ConocimientoSoftware">
         <MappingFragment StoreEntitySet="ConocimientoSoftware">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="tipoSoftware" ColumnName="tipoSoftware" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -273,7 +275,6 @@
     <EntitySetMapping Name="CursoCentroCapacitacions">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.CursoCentroCapacitacion">
         <MappingFragment StoreEntitySet="CursoCentroCapacitacion">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="anno" ColumnName="anno" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -389,6 +390,17 @@
         <MappingFragment StoreEntitySet="DocumentoColaboracionEvento">
           <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
           <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="FileStreamCol" ColumnName="FileStreamCol" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentoColaboracionExternoes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.DocumentoColaboracionExterno">
+        <MappingFragment StoreEntitySet="DocumentoColaboracionExterno">
+          <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
           <ScalarProperty Name="FileStreamCol" ColumnName="FileStreamCol" />
           <ScalarProperty Name="FileName" ColumnName="FileName" />
           <ScalarProperty Name="FileID" ColumnName="FileID" />
@@ -1040,10 +1052,6 @@
     <EntitySetMapping Name="Personas">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.Persona">
         <MappingFragment StoreEntitySet="Persona">
-          <ScalarProperty Name="diasLimite" ColumnName="diasLimite" />
-          <ScalarProperty Name="activo" ColumnName="activo" />
-          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="departamento" ColumnName="departamento" />
           <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
           <ScalarProperty Name="puesto" ColumnName="puesto" />
@@ -1119,6 +1127,15 @@
     <EntitySetMapping Name="PersonaXColaboracionEventoes">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXColaboracionEvento">
         <MappingFragment StoreEntitySet="PersonaXColaboracionEvento">
+          <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
+          <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonaXColaboracionExternoes">
+      <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXColaboracionExterno">
+        <MappingFragment StoreEntitySet="PersonaXColaboracionExterno">
           <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
           <ScalarProperty Name="id_persona" ColumnName="id_persona" />
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -1553,7 +1570,6 @@
     <EntitySetMapping Name="TrabajoNoRemuneradoes">
       <EntityTypeMapping TypeName="ExpedienteDigitalModel.TrabajoNoRemunerado">
         <MappingFragment StoreEntitySet="TrabajoNoRemunerado">
-          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
           <ScalarProperty Name="periodoLectivo" ColumnName="periodoLectivo" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="ID" ColumnName="ID" />

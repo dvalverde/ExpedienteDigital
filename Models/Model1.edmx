@@ -11,7 +11,6 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Articulo">
           <Key>
@@ -24,7 +23,6 @@
           <Property Name="revista" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="id_pais" Type="int" Nullable="false" />
           <Property Name="consejoEditorial" Type="varchar" MaxLength="50" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Autor">
           <Key>
@@ -192,7 +190,6 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar(max)" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="CapacitacionProfesional">
           <Key>
@@ -200,7 +197,6 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Capitulo">
           <Key>
@@ -210,7 +206,6 @@
           <Property Name="titulo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="numeroAutores" Type="int" Nullable="false" />
           <Property Name="id_libro" Type="int" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="CitaDeAtestados">
           <Key>
@@ -229,13 +224,20 @@
           <Property Name="nombreEvento" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="nombreEntidad" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="ColaboracionExterno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="anno" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
         <EntityType Name="ComisionInstitucional">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar(max)" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="ConocimientoSoftware">
           <Key>
@@ -244,7 +246,6 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="tipoSoftware" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="CursoCentroCapacitacion">
           <Key>
@@ -253,7 +254,6 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="anno" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="CursoContinuo">
           <Key>
@@ -357,6 +357,16 @@
           <Property Name="FileName" Type="varchar(max)" />
           <Property Name="FileStreamCol" Type="varbinary(max)" />
           <Property Name="tipo" Type="int" Nullable="false" />
+          <Property Name="id_colaboracion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DocumentoColaboracionExterno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileName" Type="varchar(max)" />
+          <Property Name="FileStreamCol" Type="varbinary(max)" />
           <Property Name="id_colaboracion" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DocumentoComisionInstitucional">
@@ -943,23 +953,19 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cedula" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="apellido1" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="apellido2" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cedula" Type="varchar" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="apellido1" Type="varchar" MaxLength="100" />
+          <Property Name="apellido2" Type="varchar" MaxLength="100" />
           <Property Name="username" Type="varchar" MaxLength="50" />
-          <Property Name="password" Type="varchar" MaxLength="50" />
-          <Property Name="categoria" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="password" Type="varchar(max)" Nullable="false" />
+          <Property Name="categoria" Type="varchar" MaxLength="100" />
           <Property Name="rol" Type="int" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="50" />
           <Property Name="celular" Type="varchar" MaxLength="50" />
           <Property Name="puesto" Type="varchar" MaxLength="100" />
           <Property Name="correoElectronico" Type="varchar" MaxLength="150" />
           <Property Name="departamento" Type="varchar" MaxLength="150" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
-          <Property Name="fechaModificacion" Type="datetime" />
-          <Property Name="activo" Type="bit" Nullable="false" />
-          <Property Name="diasLimite" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="PersonaXActividadFortalecimiento">
           <Key>
@@ -1011,6 +1017,14 @@
           <Property Name="fechaEntrega" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="PersonaXColaboracionEvento">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_persona" Type="int" Nullable="false" />
+          <Property Name="id_colaboracion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonaXColaboracionExterno">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -1350,7 +1364,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="medioDivulgacion" Type="varbinary" MaxLength="150" Nullable="false" />
+          <Property Name="medioDivulgacion" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Publicacion">
           <Key>
@@ -1402,7 +1416,6 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="periodoLectivo" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
         </EntityType>
         <Association Name="FK_Articulo_Pais">
           <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
@@ -1916,6 +1929,18 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="DocumentoColaboracionEvento">
+              <PropertyRef Name="id_colaboracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentoColaboracionExterno_ColaboracionExterno">
+          <End Role="ColaboracionExterno" Type="Self.ColaboracionExterno" Multiplicity="1" />
+          <End Role="DocumentoColaboracionExterno" Type="Self.DocumentoColaboracionExterno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColaboracionExterno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentoColaboracionExterno">
               <PropertyRef Name="id_colaboracion" />
             </Dependent>
           </ReferentialConstraint>
@@ -2600,6 +2625,30 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="PersonaXColaboracionEvento">
+              <PropertyRef Name="id_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaXColaboracionExterno_ColaboracionExterno">
+          <End Role="ColaboracionExterno" Type="Self.ColaboracionExterno" Multiplicity="1" />
+          <End Role="PersonaXColaboracionExterno" Type="Self.PersonaXColaboracionExterno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColaboracionExterno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonaXColaboracionExterno">
+              <PropertyRef Name="id_colaboracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaXColaboracionExterno_Persona">
+          <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+          <End Role="PersonaXColaboracionExterno" Type="Self.PersonaXColaboracionExterno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonaXColaboracionExterno">
               <PropertyRef Name="id_persona" />
             </Dependent>
           </ReferentialConstraint>
@@ -3543,6 +3592,7 @@
           <EntitySet Name="Capitulo" EntityType="Self.Capitulo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CitaDeAtestados" EntityType="Self.CitaDeAtestados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ColaboracionEvento" EntityType="Self.ColaboracionEvento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ColaboracionExterno" EntityType="Self.ColaboracionExterno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ComisionInstitucional" EntityType="Self.ComisionInstitucional" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ConocimientoSoftware" EntityType="Self.ConocimientoSoftware" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CursoCentroCapacitacion" EntityType="Self.CursoCentroCapacitacion" Schema="dbo" store:Type="Tables" />
@@ -3558,6 +3608,7 @@
           <EntitySet Name="DocumentoCapacitacionInterna" EntityType="Self.DocumentoCapacitacionInterna" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentoCapacitacionProfesional" EntityType="Self.DocumentoCapacitacionProfesional" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentoColaboracionEvento" EntityType="Self.DocumentoColaboracionEvento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DocumentoColaboracionExterno" EntityType="Self.DocumentoColaboracionExterno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentoComisionInstitucional" EntityType="Self.DocumentoComisionInstitucional" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentoConocimientoSoftware" EntityType="Self.DocumentoConocimientoSoftware" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DocumentoCursoCentroCapacitacion" EntityType="Self.DocumentoCursoCentroCapacitacion" Schema="dbo" store:Type="Tables" />
@@ -3628,6 +3679,7 @@
           <EntitySet Name="PersonaXCapitulo" EntityType="Self.PersonaXCapitulo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonaXCita" EntityType="Self.PersonaXCita" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonaXColaboracionEvento" EntityType="Self.PersonaXColaboracionEvento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonaXColaboracionExterno" EntityType="Self.PersonaXColaboracionExterno" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonaXConocimientoSoftware" EntityType="Self.PersonaXConocimientoSoftware" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonaXCursoCentroCapacitacion" EntityType="Self.PersonaXCursoCentroCapacitacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonaXCursoContinuo" EntityType="Self.PersonaXCursoContinuo" Schema="dbo" store:Type="Tables" />
@@ -3848,6 +3900,10 @@
           <AssociationSet Name="FK_DocumentoColaboracionEvento_ColaboracionEvento" Association="Self.FK_DocumentoColaboracionEvento_ColaboracionEvento">
             <End Role="ColaboracionEvento" EntitySet="ColaboracionEvento" />
             <End Role="DocumentoColaboracionEvento" EntitySet="DocumentoColaboracionEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentoColaboracionExterno_ColaboracionExterno" Association="Self.FK_DocumentoColaboracionExterno_ColaboracionExterno">
+            <End Role="ColaboracionExterno" EntitySet="ColaboracionExterno" />
+            <End Role="DocumentoColaboracionExterno" EntitySet="DocumentoColaboracionExterno" />
           </AssociationSet>
           <AssociationSet Name="FK_DocumentoComisionInstitucional_ComisionInstitucional" Association="Self.FK_DocumentoComisionInstitucional_ComisionInstitucional">
             <End Role="ComisionInstitucional" EntitySet="ComisionInstitucional" />
@@ -4076,6 +4132,14 @@
           <AssociationSet Name="FK_PersonaXColaboracionEvento_Persona" Association="Self.FK_PersonaXColaboracionEvento_Persona">
             <End Role="Persona" EntitySet="Persona" />
             <End Role="PersonaXColaboracionEvento" EntitySet="PersonaXColaboracionEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaXColaboracionExterno_ColaboracionExterno" Association="Self.FK_PersonaXColaboracionExterno_ColaboracionExterno">
+            <End Role="ColaboracionExterno" EntitySet="ColaboracionExterno" />
+            <End Role="PersonaXColaboracionExterno" EntitySet="PersonaXColaboracionExterno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaXColaboracionExterno_Persona" Association="Self.FK_PersonaXColaboracionExterno_Persona">
+            <End Role="Persona" EntitySet="Persona" />
+            <End Role="PersonaXColaboracionExterno" EntitySet="PersonaXColaboracionExterno" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonaXConocimientoSoftware_ConocimientoSoftware" Association="Self.FK_PersonaXConocimientoSoftware_ConocimientoSoftware">
             <End Role="ConocimientoSoftware" EntitySet="ConocimientoSoftware" />
@@ -4413,6 +4477,7 @@
           <EntitySet Name="Capituloes" EntityType="ExpedienteDigitalModel.Capitulo" />
           <EntitySet Name="CitaDeAtestados" EntityType="ExpedienteDigitalModel.CitaDeAtestado" />
           <EntitySet Name="ColaboracionEventoes" EntityType="ExpedienteDigitalModel.ColaboracionEvento" />
+          <EntitySet Name="ColaboracionExternoes" EntityType="ExpedienteDigitalModel.ColaboracionExterno" />
           <EntitySet Name="ComisionInstitucionals" EntityType="ExpedienteDigitalModel.ComisionInstitucional" />
           <EntitySet Name="ConocimientoSoftwares" EntityType="ExpedienteDigitalModel.ConocimientoSoftware" />
           <EntitySet Name="CursoCentroCapacitacions" EntityType="ExpedienteDigitalModel.CursoCentroCapacitacion" />
@@ -4428,6 +4493,7 @@
           <EntitySet Name="DocumentoCapacitacionInternas" EntityType="ExpedienteDigitalModel.DocumentoCapacitacionInterna" />
           <EntitySet Name="DocumentoCapacitacionProfesionals" EntityType="ExpedienteDigitalModel.DocumentoCapacitacionProfesional" />
           <EntitySet Name="DocumentoColaboracionEventoes" EntityType="ExpedienteDigitalModel.DocumentoColaboracionEvento" />
+          <EntitySet Name="DocumentoColaboracionExternoes" EntityType="ExpedienteDigitalModel.DocumentoColaboracionExterno" />
           <EntitySet Name="DocumentoComisionInstitucionals" EntityType="ExpedienteDigitalModel.DocumentoComisionInstitucional" />
           <EntitySet Name="DocumentoConocimientoSoftwares" EntityType="ExpedienteDigitalModel.DocumentoConocimientoSoftware" />
           <EntitySet Name="DocumentoCursoCentroCapacitacions" EntityType="ExpedienteDigitalModel.DocumentoCursoCentroCapacitacion" />
@@ -4498,6 +4564,7 @@
           <EntitySet Name="PersonaXCapituloes" EntityType="ExpedienteDigitalModel.PersonaXCapitulo" />
           <EntitySet Name="PersonaXCitas" EntityType="ExpedienteDigitalModel.PersonaXCita" />
           <EntitySet Name="PersonaXColaboracionEventoes" EntityType="ExpedienteDigitalModel.PersonaXColaboracionEvento" />
+          <EntitySet Name="PersonaXColaboracionExternoes" EntityType="ExpedienteDigitalModel.PersonaXColaboracionExterno" />
           <EntitySet Name="PersonaXConocimientoSoftwares" EntityType="ExpedienteDigitalModel.PersonaXConocimientoSoftware" />
           <EntitySet Name="PersonaXCursoCentroCapacitacions" EntityType="ExpedienteDigitalModel.PersonaXCursoCentroCapacitacion" />
           <EntitySet Name="PersonaXCursoContinuos" EntityType="ExpedienteDigitalModel.PersonaXCursoContinuo" />
@@ -4746,6 +4813,14 @@
           <AssociationSet Name="FK_PersonaXColaboracionEvento_ColaboracionEvento" Association="ExpedienteDigitalModel.FK_PersonaXColaboracionEvento_ColaboracionEvento">
             <End Role="ColaboracionEvento" EntitySet="ColaboracionEventoes" />
             <End Role="PersonaXColaboracionEvento" EntitySet="PersonaXColaboracionEventoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DocumentoColaboracionExterno_ColaboracionExterno" Association="ExpedienteDigitalModel.FK_DocumentoColaboracionExterno_ColaboracionExterno">
+            <End Role="ColaboracionExterno" EntitySet="ColaboracionExternoes" />
+            <End Role="DocumentoColaboracionExterno" EntitySet="DocumentoColaboracionExternoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaXColaboracionExterno_ColaboracionExterno" Association="ExpedienteDigitalModel.FK_PersonaXColaboracionExterno_ColaboracionExterno">
+            <End Role="ColaboracionExterno" EntitySet="ColaboracionExternoes" />
+            <End Role="PersonaXColaboracionExterno" EntitySet="PersonaXColaboracionExternoes" />
           </AssociationSet>
           <AssociationSet Name="FK_DocumentoComisionInstitucional_ComisionInstitucional" Association="ExpedienteDigitalModel.FK_DocumentoComisionInstitucional_ComisionInstitucional">
             <End Role="ComisionInstitucional" EntitySet="ComisionInstitucionals" />
@@ -5063,6 +5138,10 @@
             <End Role="Persona" EntitySet="Personas" />
             <End Role="PersonaXColaboracionEvento" EntitySet="PersonaXColaboracionEventoes" />
           </AssociationSet>
+          <AssociationSet Name="FK_PersonaXColaboracionExterno_Persona" Association="ExpedienteDigitalModel.FK_PersonaXColaboracionExterno_Persona">
+            <End Role="Persona" EntitySet="Personas" />
+            <End Role="PersonaXColaboracionExterno" EntitySet="PersonaXColaboracionExternoes" />
+          </AssociationSet>
           <AssociationSet Name="FK_PersonaXConocimientoSoftware_Persona" Association="ExpedienteDigitalModel.FK_PersonaXConocimientoSoftware_Persona">
             <End Role="Persona" EntitySet="Personas" />
             <End Role="PersonaXConocimientoSoftware" EntitySet="PersonaXConocimientoSoftwares" />
@@ -5258,7 +5337,6 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="AutorXActividadFortalecimientoes" Relationship="ExpedienteDigitalModel.FK_AutorXActividadFortalecimiento_ActividadFortalecimiento" FromRole="ActividadFortalecimiento" ToRole="AutorXActividadFortalecimiento" />
           <NavigationProperty Name="DocumentoActividadFortalecimientoes" Relationship="ExpedienteDigitalModel.FK_DocumentoActividadFortalecimiento_ActividadFortalecimiento" FromRole="ActividadFortalecimiento" ToRole="DocumentoActividadFortalecimiento" />
           <NavigationProperty Name="PersonaXActividadFortalecimientoes" Relationship="ExpedienteDigitalModel.FK_PersonaXActividadFortalecimiento_ActividadFortalecimiento" FromRole="ActividadFortalecimiento" ToRole="PersonaXActividadFortalecimiento" />
@@ -5274,7 +5352,6 @@
           <Property Name="revista" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_pais" Type="Int32" Nullable="false" />
           <Property Name="consejoEditorial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Pai" Relationship="ExpedienteDigitalModel.FK_Articulo_Pais" FromRole="Articulo" ToRole="Pai" />
           <NavigationProperty Name="AutorXArticuloes" Relationship="ExpedienteDigitalModel.FK_AutorXArticulo_Articulo" FromRole="Articulo" ToRole="AutorXArticulo" />
           <NavigationProperty Name="DocumentoArticuloes" Relationship="ExpedienteDigitalModel.FK_DocumentoArticulo_Articulo" FromRole="Articulo" ToRole="DocumentoArticulo" />
@@ -5500,7 +5577,6 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="DocumentoCapacitacionInternas" Relationship="ExpedienteDigitalModel.FK_DocumentoCapacitacionInterna_CapacitacionInterna" FromRole="CapacitacionInterna" ToRole="DocumentoCapacitacionInterna" />
           <NavigationProperty Name="PersonaXCapacitacionInternas" Relationship="ExpedienteDigitalModel.FK_PersonaXCapacitacionInterna_CapacitacionInterna" FromRole="CapacitacionInterna" ToRole="PersonaXCapacitacionInterna" />
         </EntityType>
@@ -5510,7 +5586,6 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="DocumentoCapacitacionProfesionals" Relationship="ExpedienteDigitalModel.FK_DocumentoCapacitacionProfesional_CapacitacionProfesional" FromRole="CapacitacionProfesional" ToRole="DocumentoCapacitacionProfesional" />
           <NavigationProperty Name="PersonaXCapacitacionProfesionals" Relationship="ExpedienteDigitalModel.FK_PersonaXCapacitacionProfesional_CapacitacionProfesional" FromRole="CapacitacionProfesional" ToRole="PersonaXCapacitacionProfesional" />
         </EntityType>
@@ -5522,7 +5597,6 @@
           <Property Name="titulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="numeroAutores" Type="Int32" Nullable="false" />
           <Property Name="id_libro" Type="Int32" Nullable="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="AutorXCapituloes" Relationship="ExpedienteDigitalModel.FK_AutorXCapitulo_Capitulo" FromRole="Capitulo" ToRole="AutorXCapitulo" />
           <NavigationProperty Name="Libro" Relationship="ExpedienteDigitalModel.FK_Capitulo_Libro" FromRole="Capitulo" ToRole="Libro" />
           <NavigationProperty Name="PersonaXCapituloes" Relationship="ExpedienteDigitalModel.FK_PersonaXCapitulo_Capitulo" FromRole="Capitulo" ToRole="PersonaXCapitulo" />
@@ -5548,13 +5622,22 @@
           <NavigationProperty Name="DocumentoColaboracionEventoes" Relationship="ExpedienteDigitalModel.FK_DocumentoColaboracionEvento_ColaboracionEvento" FromRole="ColaboracionEvento" ToRole="DocumentoColaboracionEvento" />
           <NavigationProperty Name="PersonaXColaboracionEventoes" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionEvento_ColaboracionEvento" FromRole="ColaboracionEvento" ToRole="PersonaXColaboracionEvento" />
         </EntityType>
+        <EntityType Name="ColaboracionExterno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="anno" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DocumentoColaboracionExternoes" Relationship="ExpedienteDigitalModel.FK_DocumentoColaboracionExterno_ColaboracionExterno" FromRole="ColaboracionExterno" ToRole="DocumentoColaboracionExterno" />
+          <NavigationProperty Name="PersonaXColaboracionExternoes" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionExterno_ColaboracionExterno" FromRole="ColaboracionExterno" ToRole="PersonaXColaboracionExterno" />
+        </EntityType>
         <EntityType Name="ComisionInstitucional">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="DocumentoComisionInstitucionals" Relationship="ExpedienteDigitalModel.FK_DocumentoComisionInstitucional_ComisionInstitucional" FromRole="ComisionInstitucional" ToRole="DocumentoComisionInstitucional" />
         </EntityType>
         <EntityType Name="ConocimientoSoftware">
@@ -5564,7 +5647,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="tipoSoftware" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="DocumentoConocimientoSoftwares" Relationship="ExpedienteDigitalModel.FK_DocumentoConocimientoSoftware_ConocimientoSoftware" FromRole="ConocimientoSoftware" ToRole="DocumentoConocimientoSoftware" />
           <NavigationProperty Name="PersonaXConocimientoSoftwares" Relationship="ExpedienteDigitalModel.FK_PersonaXConocimientoSoftware_ConocimientoSoftware" FromRole="ConocimientoSoftware" ToRole="PersonaXConocimientoSoftware" />
         </EntityType>
@@ -5575,7 +5657,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="anno" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="AutorXCursoCentroCapacitacions" Relationship="ExpedienteDigitalModel.FK_AutorXCursoCentroCapacitacion_CursoCentroCapacitacion" FromRole="CursoCentroCapacitacion" ToRole="AutorXCursoCentroCapacitacion" />
           <NavigationProperty Name="DocumentoCursoCentroCapacitacions" Relationship="ExpedienteDigitalModel.FK_DocumentoCursoCentroCapacitacion_CursoCentroCapacitacion" FromRole="CursoCentroCapacitacion" ToRole="DocumentoCursoCentroCapacitacion" />
           <NavigationProperty Name="PersonaXCursoCentroCapacitacions" Relationship="ExpedienteDigitalModel.FK_PersonaXCursoCentroCapacitacion_CursoCentroCapacitacion" FromRole="CursoCentroCapacitacion" ToRole="PersonaXCursoCentroCapacitacion" />
@@ -5703,6 +5784,17 @@
           <Property Name="tipo" Type="Int32" Nullable="false" />
           <Property Name="id_colaboracion" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ColaboracionEvento" Relationship="ExpedienteDigitalModel.FK_DocumentoColaboracionEvento_ColaboracionEvento" FromRole="DocumentoColaboracionEvento" ToRole="ColaboracionEvento" />
+        </EntityType>
+        <EntityType Name="DocumentoColaboracionExterno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileID" Type="Guid" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FileStreamCol" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="id_colaboracion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ColaboracionExterno" Relationship="ExpedienteDigitalModel.FK_DocumentoColaboracionExterno_ColaboracionExterno" FromRole="DocumentoColaboracionExterno" ToRole="ColaboracionExterno" />
         </EntityType>
         <EntityType Name="DocumentoComisionInstitucional">
           <Key>
@@ -6383,23 +6475,19 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cedula" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="apellido1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="apellido2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="apellido1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="apellido2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="categoria" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="categoria" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="rol" Type="Int32" Nullable="false" />
           <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="celular" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="puesto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="correoElectronico" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="departamento" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
-          <Property Name="activo" Type="Boolean" Nullable="false" />
-          <Property Name="diasLimite" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PersonaXActividadFortalecimientoes" Relationship="ExpedienteDigitalModel.FK_PersonaXActividadFortalecimiento_Persona" FromRole="Persona" ToRole="PersonaXActividadFortalecimiento" />
           <NavigationProperty Name="PersonaXArticuloes" Relationship="ExpedienteDigitalModel.FK_PersonaXArticulo_Persona" FromRole="Persona" ToRole="PersonaXArticulo" />
           <NavigationProperty Name="PersonaXCapacitacionInternas" Relationship="ExpedienteDigitalModel.FK_PersonaXCapacitacionInterna_Persona" FromRole="Persona" ToRole="PersonaXCapacitacionInterna" />
@@ -6407,6 +6495,7 @@
           <NavigationProperty Name="PersonaXCapituloes" Relationship="ExpedienteDigitalModel.FK_PersonaXCapitulo_Persona" FromRole="Persona" ToRole="PersonaXCapitulo" />
           <NavigationProperty Name="PersonaXCitas" Relationship="ExpedienteDigitalModel.FK_PersonaXCita_Persona" FromRole="Persona" ToRole="PersonaXCita" />
           <NavigationProperty Name="PersonaXColaboracionEventoes" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionEvento_Persona" FromRole="Persona" ToRole="PersonaXColaboracionEvento" />
+          <NavigationProperty Name="PersonaXColaboracionExternoes" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionExterno_Persona" FromRole="Persona" ToRole="PersonaXColaboracionExterno" />
           <NavigationProperty Name="PersonaXConocimientoSoftwares" Relationship="ExpedienteDigitalModel.FK_PersonaXConocimientoSoftware_Persona" FromRole="Persona" ToRole="PersonaXConocimientoSoftware" />
           <NavigationProperty Name="PersonaXCursoCentroCapacitacions" Relationship="ExpedienteDigitalModel.FK_PersonaXCursoCentroCapacitacion_Persona" FromRole="Persona" ToRole="PersonaXCursoCentroCapacitacion" />
           <NavigationProperty Name="PersonaXCursoContinuos" Relationship="ExpedienteDigitalModel.FK_PersonaXCursoContinuo_Persona" FromRole="Persona" ToRole="PersonaXCursoContinuo" />
@@ -6516,6 +6605,16 @@
           <Property Name="id_colaboracion" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ColaboracionEvento" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionEvento_ColaboracionEvento" FromRole="PersonaXColaboracionEvento" ToRole="ColaboracionEvento" />
           <NavigationProperty Name="Persona" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionEvento_Persona" FromRole="PersonaXColaboracionEvento" ToRole="Persona" />
+        </EntityType>
+        <EntityType Name="PersonaXColaboracionExterno">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_persona" Type="Int32" Nullable="false" />
+          <Property Name="id_colaboracion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ColaboracionExterno" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionExterno_ColaboracionExterno" FromRole="PersonaXColaboracionExterno" ToRole="ColaboracionExterno" />
+          <NavigationProperty Name="Persona" Relationship="ExpedienteDigitalModel.FK_PersonaXColaboracionExterno_Persona" FromRole="PersonaXColaboracionExterno" ToRole="Persona" />
         </EntityType>
         <EntityType Name="PersonaXConocimientoSoftware">
           <Key>
@@ -6933,7 +7032,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="medioDivulgacion" Type="Binary" Nullable="false" MaxLength="150" FixedLength="false" />
+          <Property Name="medioDivulgacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="AutorXProyectoInvestigacions" Relationship="ExpedienteDigitalModel.FK_AutorXProyectoInvestigacion_ProyectoInvestigacion" FromRole="ProyectoInvestigacion" ToRole="AutorXProyectoInvestigacion" />
           <NavigationProperty Name="DocumentoProyectoInvestigacions" Relationship="ExpedienteDigitalModel.FK_DocumentoProyectoInvestigacion_ProyectoInvestigacion" FromRole="ProyectoInvestigacion" ToRole="DocumentoProyectoInvestigacion" />
           <NavigationProperty Name="PersonaXProyectoInvestigacions" Relationship="ExpedienteDigitalModel.FK_PersonaXProyectoInvestigacion_ProyectoInvestigacion" FromRole="ProyectoInvestigacion" ToRole="PersonaXProyectoInvestigacion" />
@@ -6999,7 +7098,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="periodoLectivo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="DocumentoTrabajoNoRemuneradoes" Relationship="ExpedienteDigitalModel.FK_DocumentoTrabajoNoRemunerado_TrabajoNoRemunerado" FromRole="TrabajoNoRemunerado" ToRole="DocumentoTrabajoNoRemunerado" />
           <NavigationProperty Name="PersonaXTrabajoNoRemuneradoes" Relationship="ExpedienteDigitalModel.FK_PersonaXTrabajoNoRemunerado_TrabajoNoRemunerado" FromRole="TrabajoNoRemunerado" ToRole="PersonaXTrabajoNoRemunerado" />
         </EntityType>
@@ -7599,6 +7697,30 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="PersonaXColaboracionEvento">
+              <PropertyRef Name="id_colaboracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DocumentoColaboracionExterno_ColaboracionExterno">
+          <End Type="ExpedienteDigitalModel.ColaboracionExterno" Role="ColaboracionExterno" Multiplicity="1" />
+          <End Type="ExpedienteDigitalModel.DocumentoColaboracionExterno" Role="DocumentoColaboracionExterno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColaboracionExterno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DocumentoColaboracionExterno">
+              <PropertyRef Name="id_colaboracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaXColaboracionExterno_ColaboracionExterno">
+          <End Type="ExpedienteDigitalModel.ColaboracionExterno" Role="ColaboracionExterno" Multiplicity="1" />
+          <End Type="ExpedienteDigitalModel.PersonaXColaboracionExterno" Role="PersonaXColaboracionExterno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ColaboracionExterno">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonaXColaboracionExterno">
               <PropertyRef Name="id_colaboracion" />
             </Dependent>
           </ReferentialConstraint>
@@ -8551,6 +8673,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PersonaXColaboracionExterno_Persona">
+          <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="ExpedienteDigitalModel.PersonaXColaboracionExterno" Role="PersonaXColaboracionExterno" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persona">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonaXColaboracionExterno">
+              <PropertyRef Name="id_persona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PersonaXConocimientoSoftware_Persona">
           <End Type="ExpedienteDigitalModel.Persona" Role="Persona" Multiplicity="1" />
           <End Type="ExpedienteDigitalModel.PersonaXConocimientoSoftware" Role="PersonaXConocimientoSoftware" Multiplicity="*" />
@@ -9115,7 +9249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        </Schema>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -9124,7 +9258,6 @@
           <EntitySetMapping Name="ActividadFortalecimientoes">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.ActividadFortalecimiento">
               <MappingFragment StoreEntitySet="ActividadFortalecimiento">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -9133,7 +9266,6 @@
           <EntitySetMapping Name="Articuloes">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.Articulo">
               <MappingFragment StoreEntitySet="Articulo">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="consejoEditorial" ColumnName="consejoEditorial" />
                 <ScalarProperty Name="id_pais" ColumnName="id_pais" />
                 <ScalarProperty Name="revista" ColumnName="revista" />
@@ -9326,7 +9458,6 @@
           <EntitySetMapping Name="CapacitacionInternas">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.CapacitacionInterna">
               <MappingFragment StoreEntitySet="CapacitacionInterna">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -9335,7 +9466,6 @@
           <EntitySetMapping Name="CapacitacionProfesionals">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.CapacitacionProfesional">
               <MappingFragment StoreEntitySet="CapacitacionProfesional">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -9344,7 +9474,6 @@
           <EntitySetMapping Name="Capituloes">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.Capitulo">
               <MappingFragment StoreEntitySet="Capitulo">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="id_libro" ColumnName="id_libro" />
                 <ScalarProperty Name="numeroAutores" ColumnName="numeroAutores" />
                 <ScalarProperty Name="titulo" ColumnName="titulo" />
@@ -9371,10 +9500,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ColaboracionExternoes">
+            <EntityTypeMapping TypeName="ExpedienteDigitalModel.ColaboracionExterno">
+              <MappingFragment StoreEntitySet="ColaboracionExterno">
+                <ScalarProperty Name="anno" ColumnName="anno" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ComisionInstitucionals">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.ComisionInstitucional">
               <MappingFragment StoreEntitySet="ComisionInstitucional">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -9383,7 +9520,6 @@
           <EntitySetMapping Name="ConocimientoSoftwares">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.ConocimientoSoftware">
               <MappingFragment StoreEntitySet="ConocimientoSoftware">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="tipoSoftware" ColumnName="tipoSoftware" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -9393,7 +9529,6 @@
           <EntitySetMapping Name="CursoCentroCapacitacions">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.CursoCentroCapacitacion">
               <MappingFragment StoreEntitySet="CursoCentroCapacitacion">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="anno" ColumnName="anno" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -9509,6 +9644,17 @@
               <MappingFragment StoreEntitySet="DocumentoColaboracionEvento">
                 <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="FileStreamCol" ColumnName="FileStreamCol" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentoColaboracionExternoes">
+            <EntityTypeMapping TypeName="ExpedienteDigitalModel.DocumentoColaboracionExterno">
+              <MappingFragment StoreEntitySet="DocumentoColaboracionExterno">
+                <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
                 <ScalarProperty Name="FileStreamCol" ColumnName="FileStreamCol" />
                 <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="FileID" ColumnName="FileID" />
@@ -10160,10 +10306,6 @@
           <EntitySetMapping Name="Personas">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.Persona">
               <MappingFragment StoreEntitySet="Persona">
-                <ScalarProperty Name="diasLimite" ColumnName="diasLimite" />
-                <ScalarProperty Name="activo" ColumnName="activo" />
-                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="departamento" ColumnName="departamento" />
                 <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
                 <ScalarProperty Name="puesto" ColumnName="puesto" />
@@ -10239,6 +10381,15 @@
           <EntitySetMapping Name="PersonaXColaboracionEventoes">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXColaboracionEvento">
               <MappingFragment StoreEntitySet="PersonaXColaboracionEvento">
+                <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
+                <ScalarProperty Name="id_persona" ColumnName="id_persona" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonaXColaboracionExternoes">
+            <EntityTypeMapping TypeName="ExpedienteDigitalModel.PersonaXColaboracionExterno">
+              <MappingFragment StoreEntitySet="PersonaXColaboracionExterno">
                 <ScalarProperty Name="id_colaboracion" ColumnName="id_colaboracion" />
                 <ScalarProperty Name="id_persona" ColumnName="id_persona" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -10673,7 +10824,6 @@
           <EntitySetMapping Name="TrabajoNoRemuneradoes">
             <EntityTypeMapping TypeName="ExpedienteDigitalModel.TrabajoNoRemunerado">
               <MappingFragment StoreEntitySet="TrabajoNoRemunerado">
-                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
                 <ScalarProperty Name="periodoLectivo" ColumnName="periodoLectivo" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
