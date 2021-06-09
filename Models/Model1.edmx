@@ -5330,6 +5330,20 @@
             <End Role="TrabajoNoRemunerado" EntitySet="TrabajoNoRemuneradoes" />
             <End Role="PersonaXTrabajoNoRemunerado" EntitySet="PersonaXTrabajoNoRemuneradoes" />
           </AssociationSet>
+          <FunctionImport Name="DBbackup">
+            <Parameter Name="nameDB" Mode="In" Type="String" />
+            <Parameter Name="nameFile" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DBRestore">
+            <Parameter Name="nameDB" Mode="In" Type="String" />
+            <Parameter Name="nameFile" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ServerBackUpsQuerry" ReturnType="Collection(ExpedienteDigitalModel.ServerBackUpsQuerry_Result)" />
+          <FunctionImport Name="sp_DBbackup">
+            <Parameter Name="nameDB" Mode="In" Type="String" />
+            <Parameter Name="nameFile" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ServerBackUpsQuerry" ReturnType="Collection(ExpedienteDigitalModel.sp_ServerBackUpsQuerry_Result)" />
         </EntityContainer>
         <EntityType Name="ActividadFortalecimiento">
           <Key>
@@ -9249,6 +9263,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="ServerBackUpsQuerry_Result">
+          <Property Type="String" Name="server_name" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="database_name" Nullable="true" MaxLength="128" />
+          <Property Type="DateTime" Name="backup_finish_date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="backup_size" Nullable="true" Precision="20" Scale="0" />
+          <Property Type="String" Name="BackupType" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="C__Server_Drive_backup_path_backup_file" Nullable="true" MaxLength="4000" />
+        </ComplexType>
+        <ComplexType Name="sp_ServerBackUpsQuerry_Result">
+          <Property Type="Int32" Name="backup_set_id" Nullable="false" />
+          <Property Type="String" Name="server_name" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="database_name" Nullable="true" MaxLength="128" />
+          <Property Type="DateTime" Name="backup_finish_date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="backup_size" Nullable="true" Precision="20" Scale="0" />
+          <Property Type="String" Name="BackupType" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="physical_device_name" Nullable="true" MaxLength="260" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -10830,7 +10861,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -10844,8 +10875,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

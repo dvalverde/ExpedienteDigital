@@ -32,6 +32,13 @@
                             }
 
                         </li>
+                        <li style="padding-right: 35px; padding-left: 35px">
+                            @if (Session["Rol"] != null)
+                            {
+                                @Html.ActionLink("Respaldar Base de Datos", "MenuRespaldo", "Respaldo")
+                            }
+
+                        </li>
                         <li style="padding-right: 35px;">
                             @if (Session["Rol"] != null)
                             {

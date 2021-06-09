@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ExpDigital.Models.sp_ServerBackUpsQuerry_Result>
+@{
+    ViewBag.Title = "MenuRespaldo";
+}
+
+<h2>MenuRespaldo</h2>
+
+<p>
+    @Html.ActionLink("CreateRespaldo", "CreateRespaldo")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Fecha de Creacion
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.backup_finish_date)
+            </td>
+            <td>
+                @Html.ActionLink("Detalles", "Detalles", new { id = item.backup_set_id })
+            </td>
+        </tr>
+    }
+
+</table>

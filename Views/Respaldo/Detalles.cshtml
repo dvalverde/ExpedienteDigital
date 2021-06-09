@@ -1,0 +1,57 @@
+﻿@model ExpDigital.Models.sp_ServerBackUpsQuerry_Result
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Restaurar base de datos</h2>
+<p>
+    @Html.ActionLink("Volver", "MenuRespaldo")
+</p>
+    <div class="content-container">
+        <div class="container-fluid">
+            @if (ViewBag.restauracionExitosa != null)
+            {
+                <div class="alert alert-success">
+                    <strong>Restauracion Exitosa!</strong> Se ha restaurado la base de datos satisfactoriamente
+                </div>
+            }
+            @if (ViewBag.errorRestauracion != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> No se pudo restaurar la base de datos.
+                </div>
+            }
+
+            <table class="table">
+                <tr>
+                    <th>
+                        Fecha de Creacion
+                    </th>
+                    <th>
+                        Ruta de archivo
+                    </th>
+                    <th>
+                        Tamaño en bytes
+                    </th>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        @Model.backup_finish_date
+                    </td>
+                    <td>
+                        @Model.physical_device_name
+                    </td>
+                    <td>
+                        @Model.backup_size
+                    </td>
+                </tr>
+            </table>
+            <p>
+                @Html.ActionLink("Restaurar", "Detalles", new { path = Model.physical_device_name })
+            </p>
+
+        </div>
+    </div>
+       
